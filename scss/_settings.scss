@@ -1,0 +1,161 @@
+/* #COLORS AND MIXINS
+================================================== */
+.pato{border: 1px solid red;}
+
+$background: #ffffff;
+$blaucorp: #58b7e0;
+$verdcorp:#87d035;
+$blauclar: #b1dbee;
+
+$gristext2: #4d4d4d;
+$gristext: #666666;
+$grisbutton: #b3b3b3;
+$grismig: #999999;
+$griset: #e6e6e6; /* estàndard pels borders de tota la web*/
+$grisbgform: #f2f2f2;/* el border del form es griset*/
+$griscalcula: #cccccc;
+$grisbottomtext: #818181;
+$gristoptext: #9b9b9b;
+$grisbackbutton: #58585a;
+
+$marroblog:#a27c54;
+$marrobottomtext: #6d655d;
+$marrotoptext: #8d8985;
+
+$calcula-top: #4b4a47;
+$calcula-bottom: #52504c;
+
+
+$fuchsia: #e52d7c;
+
+$grad1: #b4c05e;
+$grad2: #88c55c;
+$grad3: #5eb3b3;/* color corporatiu antic també*/
+$grad4: #4ca5c0;
+
+
+$marroclar:#ecece5;
+$marrofosc: #4d4b46;
+$marrofosc2: #52514d;
+$blau: #99d2dd;
+$preus1: #52514d;
+$preus2: #4b4a47;
+$groc: #eeea55;
+$grocgitaxi:#c9c145;
+$negre: #52514d;
+$blanc: #ffffff;
+$blanc2: #fbfbfb;
+$semiblanc: #f6f6f6;
+$button: #58585a;
+$gris: #dadadb;
+$marge-select:#58585a;
+
+$bgadmin: #f6f5f1;
+$blueadmin: #7db2da;
+
+
+$valid: #e9dce1;
+$success: #dce9dd;
+
+
+@mixin boxshadow{
+-webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,.7);
+-moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,.7);
+box-shadow: 0px 0px 15px 0px rgba(0,0,0,.7);
+}
+
+@mixin heavyshadow{
+-webkit-box-shadow: 1px 1px $grocgitaxi, 2px 2px $grocgitaxi, 3px 3px $grocgitaxi, 4px 4px $grocgitaxi, 5px 5px $grocgitaxi;
+-moz-box-shadow: 1px 1px $grocgitaxi, 2px 2px $grocgitaxi, 3px 3px $grocgitaxi, 4px 4px $grocgitaxi, 5px 5px $grocgitaxi;}
+
+@mixin heavyshadow2{
+-webkit-box-shadow: 1px 1px $blau, 2px 2px $blau, 3px 3px $blau, 4px 4px $blau, 5px 5px $blau;
+-moz-box-shadow: 1px 1px $blau, 2px 2px $blau, 3px 3px $blau, 4px 4px $blau, 5px 5px $blau;}
+
+@mixin boxshadow-soft{
+-webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,.3);
+-moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,.3);
+box-shadow: 0px 0px 15px 0px rgba(0,0,0,.3);
+}
+
+@mixin transition{-webkit-transition: all 0.3s ease-in; -moz-transition: all 0.5s ease-in; -o-transition: all 0.5s ease-in;}
+@mixin transition2{-webkit-transition: all 0.7s ease 0s; -moz-transition: all 0.7s ease 0s; -o-transition: all 0.7s ease 0s; transition: all 0.7s ease 0s;}
+
+
+@mixin colortransition{
+-webkit-transition: color 0.3s ease-in;
+transition: color 0.3s ease-in;
+-moz-transition: color 0.3s ease-in;
+}
+
+@mixin rota($deg){
+transform:rotate($deg);
+-ms-transform:rotate($deg); /* Internet Explorer */
+-moz-transform:rotate($deg); /* Firefox */
+-webkit-transform:rotate($deg); /* Safari and Chrome */
+-o-transform:rotate($deg); /* Opera */
+}
+
+@mixin textshadow{ text-shadow: 0px 0px 17px rgba(0,0,0,.4);}
+
+
+@mixin gradtext {background: -webkit-linear-gradient($gristoptext, $grisbottomtext);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;}
+  
+@mixin gradtext2 {background: -webkit-linear-gradient($marrotoptext, $marrobottomtext);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;}  
+
+
+@mixin gradtext3{
+	background-image: -webkit-gradient(
+	linear,
+	left top, left bottom,
+	from(rgba(0, 0, 0, 1)),
+	to(rgba(0, 0, 0, 0.2))
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+
+@mixin gradtext3{
+background: -webkit-linear-gradient($blauclar, $blaucorp);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+@mixin rounded($radius: 0.5em) {
+-webkit-border-radius: $radius;
+-moz-border-radius: $radius;
+border-radius: $radius;
+}
+
+@mixin placeholder-verd{
+::-webkit-input-placeholder {color: $verdcorp;}
+	:-moz-placeholder { color: $verdcorp;}
+	::-moz-placeholder {color: $verdcorp;}
+	:-ms-input-placeholder { color: $verdcorp;}
+}
+
+$grad01: #fafafa;
+	$grad02: #efefef;
+
+@mixin gradient1{
+background: $grad02; /* Old browsers */
+background: -moz-linear-gradient(top, $grad01 0%, $grad02 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$grad01), color-stop(100%,$grad02)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, $grad01 0%,$grad02 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, $grad01 0%,$grad02 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, $grad01 0%,$grad02 100%); /* IE10+ */
+background: linear-gradient(to bottom, $grad01 0%,$grad02 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$grad01', endColorstr='$grad02',GradientType=0 ); /* IE6-9 */
+}
+
+input::-webkit-input-placeholder {color: $blaucorp;}
+input:-moz-placeholder { color: $blaucorp;}
+input::-moz-placeholder {color: $blaucorp;}
+input:-ms-input-placeholder { color: $blaucorp;}
+

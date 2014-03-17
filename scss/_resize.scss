@@ -1,0 +1,145 @@
+#logo a {}
+
+nav select { padding: 0 !important; margin: 40px 0; display: inline-block; float: left;}
+
+h1#logo{ text-align: center;
+a { margin: 0px !important; float: left; display: inline-block; width: 290px; height: 51px; text-indent: -9999px; background: transparent url(/img/futureco-logo@2x.png) center no-repeat; background-size: 290px 51px; }}
+
+
+
+h2.mision{ background-image:url(/img/flag@2x.png); background-size: 48px 42px;}
+h2.vision{ background-image:url(/img/eye@2x.png); background-size: 64px 34px;}
+ul.prodmenu{ a.current{ background-image:url(/img/arrow-grad@2x.png); background-size:168px 26px;}}
+ul.product-item-list{li{  &:nth-child(odd){ background-image: url(/img/bg-subtle@2x.png);background-size: 746px 24px;}}}
+
+
+div.history{ 
+	h3.hist1{ background-image:url(/img/hist1@2x.png); background-size: 93px 91px;}
+	h3.hist2{ background-image:url(/img/hist2@2x.png); background-size: 93px 91px;}
+	h3.hist3{ background-image:url(/img/hist3@2x.png); background-size: 93px 91px;}
+	h3.hist4{ background-image:url(/img/hist4@2x.png); background-size: 93px 91px;}
+	h3.hist5{ background-image:url(/img/hist5@2x.png); background-size: 93px 91px;}
+	h3.hist6{ background-image:url(/img/hist6@2x.png); background-size: 93px 91px;}
+}
+
+
+ul.product-finder{ background-image:url(/img/lupa-big@2x.png);background-size: 76px 76px;}
+span.latest{ background-image:url(/img/hoja-thu@2x.png); background-size: 17px 15px;}
+a.linkgris{ background-image: $grisbutton url(/img/arrow-right-small@2x.png); background-size: 14px 17px;}
+a.linkgris2{background-image: $grisbutton url(/img/arrow-right-small@2x.png); background-size: 14px 17px;}
+a.linkblau{ background-image: $blaucorp url(/img/arrow-right-small@2x.png); background-size: 14px 17px;}
+a.linkblaugran{ background-image: $blaucorp url(/img/arrow-right-small@2x.png);background-size: 14px 17px;}
+a.hoja-button{ background-image:url(/img/hoja-index@2x.png); background-size: 185px 252px; }
+a.global-button{ background-image:url(/img/bg-global-button@2x.png); background-size: 191px 300px;}
+a.overview-button,a.overview-button-small{ background-image:url(/img/bg-overview@2x.jpg); background-size: 319px 356px;}
+a.biopesticide-button{background-image:url(/img/matraz@2x.png); background-size: 53px 84px;}
+a.benefits-button{ background-image:url(/img/bg-pot@2x.png); background-size: 87px 114px;}
+
+
+
+	h3.benefit1{ background-image:url(/img/benef1@2x.jpg); background-size: 40px 40px;}
+	h3.benefit2{ background-image:url(/img/benef2@2x.jpg); background-size: 40px 40px;}
+	h3.benefit3{ background-image:url(/img/benef3@2x.jpg); background-size: 40px 40px;}
+	h3.benefit4{ background-image:url(/img/benef4@2x.jpg); background-size: 40px 40px;}
+	h3.benefit5{ background-image:url(/img/benef5@2x.jpg); background-size: 40px 40px;}
+	h3.benefit6{ background-image:url(/img/benef6@2x.jpg); background-size: 40px 40px;}
+	h3.benefit7{ background-image:url(/img/benef7@2x.jpg); background-size: 40px 40px;}
+	h3.benefit8{ background-image:url(/img/benef8@2x.jpg); background-size: 40px 40px;}
+	h3.benefit9{ background-image:url(/img/benef9@2x.jpg); background-size: 40px 40px;}
+	h3.benefit10{ background-image:url(/img/benef10@2x.jpg); background-size: 40px 40px;}
+	h3.benefit11{ background-image:url(/img/benef11@2x.jpg); background-size: 40px 40px;}
+	h3.benefit12{ background-image:url(/img/benef12@2x.jpg); background-size: 40px 40px;}	
+
+
+
+
+a.responsible-button{ background-image: url(/img/logo-responsible@2x.png),url(/img/big-paper@2x.png); background-size: 90px 90px, 300px 346px;}
+a.findyour-button{background-image: url(/img/telescopi@2x.png),url(/img/big-paper@2x.png); background-size: 90px 120px, 300px 346px;}
+a.workwithus-button{ background-image: url(/img/fulla-feina@2x.png),url(/img/big-paper@2x.png); background-size: 90px 95px, 300px 346px;}
+
+#sband01{background-image: url(/img/bg-correctores.png),url(/img/bg-table@2x.png),url(/img/bg-green@2x.png), url(/img/bg-green.jpg); background-size: 300px 126px, 41px 25px, 968px 597px, 968px 597px; }
+
+
+#band02{ width: 100%; background-image: url(/img/super-logo@2x.jpg), url(/img/arc@2x.png); background-size: 267px 223px,400px 184px; background-position: center top, 50% 134%;}
+
+#sband03{background-image: url(/img/bg-green@2x.jpg),url(/img/bg-green@2x.jpg);}
+#band03{  a{  background-image:url(/img/play-big@2x.png); background-size: 147px 168px; color: darken($blaucorp,5%);}}
+
+#sband04{background-image: url(/img/bg-grain@2x.png);}
+#band04{ background-image:url(/img/benefits-of-agrobiological-products@2x.png); background-size: 140px 217px;}
+#sband05{background-image: url(/img/bg-grain@2x.png);}
+#band05{ background-image: url(/img/futureco-research@2x.jpg),url(/img/microscopi-transparent@2x.png); background-size: 180px 180px, 281px 400px; h2{ font-size: 2em;}}
+#sband06{background-image: url(/img/bg-grain@2x.png);}
+#band06{ background-image: url(/img/bubble-company2@2x.png);background-size: 300px 296px;}  
+
+
+
+a.linkblaugran2{background-image: $blaucorp url(/img/arrow-right-small@2x.png);  &:hover{ background-image: url(/img/arrow-right-small@2x.png); background-size: 14px 17px,14px 17px;}}
+
+
+
+
+.bandcalculator{ h3{ background-image:url(/img/lupa-calculador@2x.png); background-size: 86px 151px;}}
+.bandfooter{ background-image: url(/img/footer-stripe@2x.png),url(/img/bgfootertop@2x.png),url(/img/bgfooterbottom@2x.png); background-size: 960px 6px,22px 105px,22px 105px;}
+.bandindex{background-image:url(/img/bottom-gradient@2x.png); background-size: 27px 207px;}
+.bandglobalintro{background-image:url(/img/bottom-gradient@2x.png); background-size: 27px 207px;}
+
+
+ul.numbered-list{
+		li.first{ background-image:url(/img/bubble-one@2x.png); background-size: 31px 31px;}
+		li.second{ background-image:url(/img/bubble-two@2x.png) ; background-size: 31px 31px;}
+		li.third{ background-image:url(/img/bubble-three@2x.png) ; background-size: 31px 31px;}
+		li.fourth{ background-image:url(/img/bubble-four@2x.png) ; background-size: 31px 31px;}			
+	}
+	
+	
+ul.common-list{ li{ background-image:url(/img/blue-arrow@2x.png); background-size: 6px 6px;}}
+div.banner-work{ background-image: #fafafa url(/img/work-leave@2x.png); background-size: 83px 88px;}
+
+
+div.projects{ background-image:url(/img/subtle-sphere@2x.jpg); background-size: 123px 123px;}
+
+ul#mapa{background-image: url(/img/bg-mapa@2x.png); background-size: 870px 535px;}
+ul#mapa{
+	li{
+		a{background-image:url(/img/boleta2@2x.png); background-size: 22px 26px;}
+	}
+}
+
+
+.bandaditionals{ background-image:url(/img/top-gradient@2x.png); background-size: 27px 207px;}
+.subscribe{background-image:url(/img/arroba@2x.png); background-size: 81px 72px;}
+.final{ background-image: url(/img/gradline@2x.png), url(/img/gradline@2x.png); background-size: 349px 1px;}
+	
+	
+
+#logo a {background-image:url(/img/futureco-logo@2x.png); background-size: 310px 54px;}
+
+ul.breadcrumb{	
+
+	li a.first { background-image:url(/img/br1@2x.png) , url(/img/br2@2x.png); background-size: 11px 30px,11px 30px;}
+	li a.second{ background-image:url(/img/br3@2x.png) , url(/img/br4@2x.png); background-size: 11px 30px, 11px 30px;}
+	li a.lahoja{ background-image:url(/img/brg3@2x.png) , url(/img/brg4@2x.png); background-size: 11px 30px,11px 30px; }
+	li a.third{ background-image:url(/img/br5@2x.png) , url(/img/br6@2x.png); background-size: 11px 30px,11px 30px;}
+}
+
+ul.emails{strong{ background-image:url(/img/gradline@2x.png); background-size: 349px 1px;}}
+li.sf-search input {background-image: url('/img/search_lupa_white@2x.png'); background-size: 11px 14px;}
+
+div.sections{ background-image:url(/img/cartes@2x.jpg); background-size: 102px 101px;}
+div.ics{ background-image:url(/img/atomic@2x.jpg); background-size: 96px 151px;}
+	
+
+
+div.awards{	ul{li{  &:first-child{ background-image:url(/img/redfue@2x.png); background-size: 45px 45px;} &:last-child{ background-image:url(/img/generalitat-de-catalunya-futureco@2x.png); background-size: 45px 47px;}}}}
+
+
+div.bandfooter{ footer{
+	.telf{ background-image:url(/img/telephone@2x.png); background-size: 21px 22px;}	
+div.awards{ul{li{  &:first-child{ background-image:url(/img/redfue@2x.png); background-size: 45px 45px;} &:last-child{ background-image:url(/img/generalitat-de-catalunya-futureco@2x.png); background-size: 45px 47px;}}}}
+}}
+
+.bandsubfooter{ ul{li{ background-image:url(/img/greyspot@2x.png); background-size: 4px 4px;}}}
+.downWhite{background-image: url(/img/expand-down-white.png); background-size: 16px 16px;}
+
+.downWhite{background-image: url(/img/expand-down-white@2x.png); background-size: 16px 16px;}
