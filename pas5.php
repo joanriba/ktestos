@@ -12,6 +12,12 @@ $numeronens=$_POST[numeronens];
 
 //Incorporem les dades a les taules
 
+
+
+
+
+
+
 //TUTOR LEGAL
 mysql_query("INSERT INTO pares (nom,cognoms,tel1,tel2,tel3,email1,dni,famnum,fammono) VALUES('$_POST[nomtutor]','$_POST[cognomstutor]','$_POST[tel1]','$_POST[tel2]','$_POST[tel3]','$_POST[email1]','$_POST[dni]','$_POST[famnum]','$_POST[fammono]')",$cxn);
 
@@ -21,40 +27,36 @@ $idpare= mysql_insert_id();
 //NENS
 for ($n=1; $n<=$numeronens; $n++){
 	
-$nom=$_POST['nom'.$n];	
-$cognoms=$_POST['cognoms'.$n];
-$birthdate=$_POST['birthdate'.$n];
-$adreca=$_POST['adreca'.$n];
-$poblacio=$_POST['poblacio'.$n];
-$cp=$_POST['cp'.$n];
-$escolaultim=$_POST['escolaultim'.$n];
-$cursacabat=$_POST['cursacabat'.$n];
-$antitetanica=$_POST['antitetanica'.$n];
-$nomantitetanica=$_POST['nomantitetanica'.$n];
-$alergia=$_POST['alergia'.$n];
-$nomalergia=$_POST['nomalergia'.$n];
-$croniques=$_POST['croniques'.$n];
-$nomcroniques=$_POST['nomcroniques'.$n];
-$intervingut=$_POST['intervingut'.$n];
-$nomintervingut=$_POST['nomintervingut'.$n];
-$discapacitat=$_POST['discapacitat'.$n];
-$nomdiscapacitat=$_POST['nomdiscapacitat'.$n];
-$caracter=$_POST['caracter'.$n];
-$patologies=$_POST['patologies'.$n];
-$patologies2=$_POST['patologies2'.$n];
-$autoritzaciomedica=$_POST['autoritzaciomedica'.$n];
+$nom=$_POST['nom'.$n];$cognoms=$_POST['cognoms'.$n];$birthdate=$_POST['birthdate'.$n];$adreca=$_POST['adreca'.$n];$poblacio=$_POST['poblacio'.$n];$cp=$_POST['cp'.$n];$escolaultim=$_POST['escolaultim'.$n];$cursacabat=$_POST['cursacabat'.$n];$antitetanica=$_POST['antitetanica'.$n];$nomantitetanica=$_POST['nomantitetanica'.$n];$alergia=$_POST['alergia'.$n];$nomalergia=$_POST['nomalergia'.$n];$croniques=$_POST['croniques'.$n];$nomcroniques=$_POST['nomcroniques'.$n];$intervingut=$_POST['intervingut'.$n];$nomintervingut=$_POST['nomintervingut'.$n];$discapacitat=$_POST['discapacitat'.$n];$nomdiscapacitat=$_POST['nomdiscapacitat'.$n];$caracter=$_POST['caracter'.$n];$patologies=$_POST['patologies'.$n];$patologies2=$_POST['patologies2'.$n];$autoritzaciomedica=$_POST['autoritzaciomedica'.$n];
 
 
-$var="INSERT INTO nens (idpare, nom, cognoms,birthdate,adreca,poblacio,cp,escolaultim,cursacabat,antitetanica,nomantitetanica,alergia,nomalergia,croniques,nomcroniques,intervingut,nomintervingut,discapacitat,nomdiscapacitat,caracter,patologies,patologies2,autoritzaciomedica) VALUES('$idpare','$nom','$cognoms','$birthdate','$adreca','$poblacio','$cp','$escolaultim','$cursacabat','$antitetanica','$nomantitetanica','$alergia','$nomalergia','$croniques','$nomcroniques','$intervingut','$nomintervingut','$discapacitat','$nomdiscapacitat','$caracter','$patologies','$patologies2','$autoritzaciomedica')";
-echo $var;
+mysql_query("INSERT INTO nens (idpare, nom, cognoms,birthdate,adreca,poblacio,cp,escolaultim,cursacabat,antitetanica,nomantitetanica,alergia,nomalergia,croniques,nomcroniques,intervingut,nomintervingut,discapacitat,nomdiscapacitat,caracter,patologies,patologies2,autoritzaciomedica) VALUES('$idpare','$nom','$cognoms','$birthdate','$adreca','$poblacio','$cp','$escolaultim','$cursacabat','$antitetanica','$nomantitetanica','$alergia','$nomalergia','$croniques','$nomcroniques','$intervingut','$nomintervingut','$discapacitat','$nomdiscapacitat','$caracter','$patologies','$patologies2','$autoritzaciomedica')",$cxn);
 
-mysql_query("$var",$cxn);
-
-
- } //tanca FOR DE NANUS
+$idnen= mysql_insert_id();
 
 
+ //FOREACH de les dades del formulari anterior per fer el resum
+foreach ($llista as $value) {
+$coses=explode('/',$value);
+$nomar=$coses[0];
+$naixament=$coses[1];
+$idmodul=$coses[2];
+$llista_reduida[]=$nomar.'/'.$naixament;
 
+if($nomar==$nom and $naixament==$birthdate) { $idmodulbo=$idmodul;
+	
+	//HISTORIAL dins del for del nens
+	mysql_query("insert into historial (idmodul, idnen, status) VALUES ('$idmodulbo','$idnen','preinscrit')",$cxn);
+	
+} //tanca if
+
+} //tanca foreach
+
+} //tanca FOR DE NANUS
+
+//ENVIEM UN CORREU AL PARE I UN ALTRE A KINOBS
+
+include('admin/MailFunctions.php');
 
 
 

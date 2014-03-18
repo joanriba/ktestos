@@ -36,7 +36,7 @@ for ($n=1; $n<=$numeronens; $n++){?>
 </div>
 
 
-<form method="post" action="final.php">
+<form method="post" action="pas5.php">
 
 
 <div class="five columns">
@@ -49,6 +49,8 @@ for ($n=1; $n<=$numeronens; $n++){?>
 			
 			<input type="hidden" name="nom<?=$n?>" value="<?=$_POST['nom'.$n]?>">
 			<input type="hidden" name="cognoms<?=$n?>" value="<?=$_POST['cognoms'.$n]?>">
+			<input type="hidden" name="birthdate<?=$n?>" value="<?=$_POST['birthdate'.$n]?>">
+			
 			
 			<?=$_POST['adreca'.$n]?><br>
 			<input type="hidden" name="adreca<?=$n?>" value="<?=$_POST['adreca'.$n]?>">
@@ -72,7 +74,7 @@ for ($n=1; $n<=$numeronens; $n++){?>
 			<strong>Antitetànica:</strong> <?=$_POST['antitetanica'.$n]?><br>
 			<input type="hidden" name="antitetanica<?=$n?>" value="<?=$_POST['antitetanica'.$n]?>">
 			<strong>Comentaris antitetànica:</strong> <?=$_POST['comentarisantitetanica'.$n]?><br>
-			<input type="hidden" name="comentarisantitetanica<?=$n?>" value="<?=$_POST['comentarisantitetanica'.$n]?>">
+			<input type="hidden" name="nomantitetanica<?=$n?>" value="<?=$_POST['nomantitetanica'.$n]?>">
 			<strong>Alèrgia:</strong> <?=$_POST['alergia'.$n]?><br>
 			<input type="hidden" name="alergia<?=$n?>" value="<?=$_POST['alergia'.$n]?>">
 			<strong>Nom de l'alèrgia:</strong> <?=$_POST['nomalergia'.$n]?><br>
@@ -135,8 +137,8 @@ for ($n=1; $n<=$numeronens; $n++){?>
 		<div class="one-third column">			
 			Email 1: <?=$_POST[email1]?><br>
 			<input type="hidden" name="email1" value="<?=$_POST[email1]?>">
-			Email 2: <?=$_POST[email2]?><br>
-			<input type="hidden" name="email2" value="<?=$_POST[email2]?>">
+			
+			
 			DNI: <?=$_POST[dni]?><br>
 			<input type="hidden" name="dni" value="<?=$_POST[dni]?>">
 			Numero carnet família monoparental: <?=$_POST[fammono]?><br>
