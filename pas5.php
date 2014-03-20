@@ -1,6 +1,6 @@
 <?php
  
- //var_dump("ok"); die();
+//var_dump("ok"); die();
 //connectem a la base de dades
 include('bdcon.php');
 include('functions.php');
@@ -73,25 +73,27 @@ include('admin/MailFunctions.php');
 //noumembre($_POST[email1], $_POST[nomtutor], $_POST[cognomstutor], $_POST[tel1], $_POST[tel2], $idpare, $idioma);
 
 
-
 include('data-europeu.php'); 
 
-?>
 
 
+//==============================================================
+//ARRANQUEM EL MÒDUL DE GENRACIÓ DE PDF'S
+//==============================================================
 
-<?php
+//Contingut del html que convertim en pdf
+include("PdfBody.php");
+//Funció que converteix
+include("mpdf/mpdf.php");
 
-include_once('phpToPDF.php') ;
+$mpdf=new mPDF(); 
+$mpdf->WriteHTML($html);
+$mpdf->Output();
+exit;
 
-//contingut $html;
-include('PdfBody.php');
-//prenem el moment d'ara mateix per insertar en el nom del pdf
-$ara= time();
-
-//AMB TOT AIXÒ MUNTEM UN PDF DE COLLONS
-phptopdf_html($html,'pdf/', $nomnet.'_'.$idpare.'_'.$ara.'.pdf');
-echo '<a class="button" href="pdf/'.$nomnet.'_'.$idpare.'_'.$ara.'.pdf">Download PDF</a>';
+//==============================================================
+//==============================================================
+//==============================================================
 
 
 

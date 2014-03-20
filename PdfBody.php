@@ -20,17 +20,6 @@
 	<link rel="stylesheet" type="text/css" href="css/base.css">
 	<link rel="stylesheet" type="text/css" href="css/skeleton.css">
 	<link rel="stylesheet" type="text/css" href="css/layout.css">
-	
-
-	
-	<style type="text/css">
-<!--
-
-
--->
-</style>
-	
-
 
 </head>
 <body>
@@ -43,13 +32,14 @@
 	<!-- Delete everything in this .container and get started on your own site! -->
 
 <div class="bandkinobs">
-	<img src="/img/logo-kinobs.png">
+	<img src="img/logo-kinobs.png">
 </div>
 
 <div class="bandheader">
 	<div class="container">
 		<div class="sixteen columns">
 			<h1 class="remove-bottom" style="margin-top: 40px">Comprovant d\'inscripció</h1>
+			<p>Imprimeix aquest document i porta\'l abans de 10 díes hàbils al nostre centre Kinobs per formalitzar la inscripció</p>
 		</div>
 	</div>
 </div><!--end bandheader-->
@@ -184,11 +174,11 @@ $html .='
 
 <div class="five columns">
 			
-			'.$_POST["adreca".$n].'<br>
+			<strong>Direcció</strong>: '.$_POST["adreca".$n].'<br>
 			'.$_POST["poblacio".$n].'<br>
 			'.$_POST["cp".$n].'<br>
-			'.$_POST["cursacabat".$n].'<br>			
-			'.$_POST["escolaultim".$n].'<br>
+			<strong>Curs acabat:</strong> '.$_POST["cursacabat".$n].'<br>			
+			<strong>Última escola on s\'ha estudiat:</strong> '.$_POST["escolaultim".$n].'<br>
 			<strong>Autorització mèdica:</strong> '.$_POST["autoritzaciomedica".$n].'<br>
 
 </div>

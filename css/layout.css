@@ -437,6 +437,9 @@ table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSo
 
 /* #Site Styles
 ================================================== */
+div.bandform {
+  padding-top: 30px; }
+
 .bandkinobs {
   background-color: #e2002e; }
 
@@ -543,6 +546,18 @@ div.fitxamedica {
   -moz-border-radius: 0.5em;
   border-radius: 0.5em;
   float: left; }
+
+form.users {
+  background-color: #3389d7;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
+  padding: 20px; }
+  form.users h2 {
+    color: white; }
 
 /* #Buttons
 ================================================== */

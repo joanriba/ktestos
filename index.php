@@ -11,6 +11,7 @@ include('header.php');
 	<div class="bandform">
 	<div class="container">
 		<div class="sixteen columns">
+			
 		
 	
 	<? if(isset($_POST['submit'])){?>
@@ -99,6 +100,8 @@ include('header.php');
               </div>
               
               
+              
+              
 			</div>
 
 		
@@ -130,6 +133,8 @@ include('header.php');
  		<? } ?>
  		
  
+ <div class="seven columns">
+ 
       <form class="inscripcio" method="post" action="?" enctype="multipart/form-data">
 		
 		<h3>Quants nens vols inscriure?</h3>
@@ -143,6 +148,29 @@ include('header.php');
 
            
       </form>
+      
+ </div>
+ 
+ <div class="seven columns">
+ 	
+ 	<form class="users" method="post" action="?" enctype="multipart/form-datta">
+		
+		<h2>Ja sóc usuari</h2>
+		
+		<label for="email">Email</label> 		
+ 		<input type="text" name="email" value="">
+ 		
+ 		<label for="email">Contrasenya</label> 		
+ 		<input type="text" name="password" value="">
+ 		
+ 		 <input type="submit" name="submit" value="Accedir"/><br>
+ 		 
+ 		 <a href="forget.php">He oblidat la meva contrasenya</a>
+ 		
+ 	</form>
+ 	
+ </div>
+ 
      
     <? }?>	
     

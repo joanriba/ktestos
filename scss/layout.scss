@@ -67,6 +67,8 @@ $blaupastel: #a4bfc1;
 
 
 body{}
+
+div.bandform{ padding-top: 30px;}
 .bandkinobs{  background-color: $redkinobs;}
 .bandheader{ border-bottom: 1px solid $gris; padding: 15px 0px;}
 .bandresum{ background-color: $blanc; padding: 15px 0px; margin-bottom: 30px;  border-bottom: 1px solid $gris; background-color: $grisclar;}
@@ -76,6 +78,8 @@ body{}
 .formnen{ border: 1px solid red;}
 table#taularesum{ tfoot{ text-align: right; font-size: 2em;}}
 .activitats{ margin-bottom: 20px; position: relative;
+
+
 	
 	h1{ background-color: $griskinobs; color: $blanc; font-size: 1.7em; padding: 0px 20px;}
 }
@@ -102,6 +106,7 @@ ul.volsinscriure{
 
 div.fitxamedica{ border: 1px dotted $blaukinobs; @include rounded; float: left;}
 
+form.users{ background-color: $blaukinobs; @include rounded; @include boxshadow-soft; padding: 20px; h2{ color: $blanc;}}
 
 
 /* #Buttons
