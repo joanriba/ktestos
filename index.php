@@ -1,11 +1,6 @@
 <?php
-
 $idioma='ca'; 
-
- 
-include('header.php');
-
-?>
+include('header.php');?>
 
 
 	<div class="bandform">
@@ -153,23 +148,41 @@ include('header.php');
  
  <div class="seven columns">
  	
- 	<form class="users" method="post" action="?" enctype="multipart/form-datta">
+<script type="text/javascript" src="/js/_ajax.new.js?<?=rand()?>"></script>
+<script type="text/javascript" src="/js/_formdata2querystring.js"></script>
+<? include("js/_applogin.php");?>
+ 	
 		
-		<h2>Ja sóc usuari</h2>
+	
 		
-		<label for="email">Email</label> 		
- 		<input type="text" name="email" value="">
+		    <form class="users" id="loginForm" method="POST" action="?">
+		    
+		    		<h2>Ja sóc usuari</h2>
+      				
+      				<label for="email">Email</label>
+	      			<input id="email" name="email" type="text" >
+	      			
+	      			<label for="password">Contrasenya</label> 
+	            	<input id="pass" name="password" type="password" value="">
+	    
+	            	<input type="submit" id="submitButton" name="submitButton" value="Accedir"/>
+	            	
+	            	<a href="recover.php?idioma=<?=$idioma?>">He oblidat la meva contrasenya</a>       
+	        </form>
+	        
+      
+      <div id="promptDiv" class="procPrompt">
+          <span id="msg1"></span>
+          <span id="msg2"></span>
+        </div>
  		
- 		<label for="email">Contrasenya</label> 		
- 		<input type="text" name="password" value="">
- 		
- 		 <input type="submit" name="submit" value="Accedir"/><br>
- 		 
- 		 <a href="forget.php">He oblidat la meva contrasenya</a>
- 		
- 	</form>
  	
  </div>
+ 
+ 
+ 
+
+    
  
      
     <? }?>	

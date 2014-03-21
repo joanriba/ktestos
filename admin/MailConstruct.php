@@ -107,6 +107,13 @@ $formcorrecte_es='Hola '.$nom.',</div> Tu preinscripción ha sido enviada correc
 
 
 
+$recuperarpass_ca='Hola!,</div> T\'hem generat una contrasenya provisional perquè puguis accedir. Un cop hagis accedit pots canviar-la per una que et resulti més còmode. Gràcies.<br><br>Nova contrasenya provisional: '.$noupass.'<br><br>L\'Equip de Kinobs li desitja que segueix gaudint del servei';
+
+$recuperarpass_es='Hola!,</div> Te hemos generado una nueva contraseña provisional para que puedas acceder a tu panel de control. Una vez hayas accedido puedes modificar tu contraseña por una que te resulte más cómoda. Gracias.<br><br>Nueva contraseña provisional: '.$noupass.'<br><br>El equipo de Kinobs le desea que siga disfrutando del servicio';
+
+
+
+
 //TEXT DE NOU MEMBRE (INTERN)
 $noumembre='Hola Administrador de les activitas de Kinobs,</div> Un nou pare acaba d\'inscriure els seus fills a algunes de les activitats de kinobs. Les seves dades són les següents:<br/><br/>
 Nom complet: <strong>'.$nom.'&nbsp;'.$cognoms.'</strong><br>Telèfon1: '.$telefon1.'<br>Telèfon2: '.$telefon2.'<br> Número de client:'.$id.'<br><br>';

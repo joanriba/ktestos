@@ -50,6 +50,7 @@
 <body class="admin">
 
 <?php
+
 include('../data-europeu.php');
 $nick= $_SESSION['s_nick'];
 
@@ -85,6 +86,7 @@ $id_admin= $_SESSION['s_id_admin'];
 				<li><a href="activitats.php">Activitats, mòduls i categories</a></li>
 				<li><a href="pares.php">Pares</a></li>
 				<li><a href="nens.php">Nens</a></li>
+				<li><a href="historial.php">Historial de Comandes</a></li>
 			</ul>
 		</div>
 		

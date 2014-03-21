@@ -67,10 +67,10 @@ if($nomar==$nom and $naixament==$birthdate) { $idmodulbo=$idmodul;
 include('admin/MailFunctions.php');
 
 //correu al pare
-//traspas_correcte($_POST[email1], $_POST[nomtutor],$pass2, $idioma);
+traspas_correcte($_POST[email1], $_POST[nomtutor],$pass2, $idioma);
 
 //correu a kinobs
-//noumembre($_POST[email1], $_POST[nomtutor], $_POST[cognomstutor], $_POST[tel1], $_POST[tel2], $idpare, $idioma);
+noumembre($_POST[email1], $_POST[nomtutor], $_POST[cognomstutor], $_POST[tel1], $_POST[tel2], $idpare, $idioma);
 
 
 include('data-europeu.php'); 

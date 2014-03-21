@@ -20,6 +20,30 @@ function traspas_correcte($email, $nom, $pass, $idioma)
 			//Envia el mail
 			mail($to, $subject, $message, $headers); 
 		}
+		
+		
+		
+
+//Email que s'enviarà al pare que acaba de realitzar una inscripció
+function recuperar_pass($email, $noupass, $idioma)
+        {  
+			global $head_cat,$head_esp,$foot_cat,$foot_esp,$recuperarpass_ca,$recuperarpass_es,$headers2;
+            include('MailConstruct.php');
+        
+			$to= $email;
+			$subject_cat = "Kinobs. Recuperació de contrasenya";
+			$subject_esp = "Kinobs. Recuperación de contraseña"; 
+			$message_cat= $head_cat.$recuperarpass_ca.$foot_cat;
+			$message_esp= $head_esp.$recuperarpass_es.$foot_esp;
+			$headers;
+			
+			if($idioma=='ca') {$message=$message_cat and $subject=$subject_cat;} else {$message=$message_esp and $subject=$subject_esp;}
+
+			//Envia el mail
+			mail($to, $subject, $message, $headers); 
+		}
+
+		
         
 
 //Email que s'enviarà a l'administrador de Kinobs per avisar que hi ha un nou membre

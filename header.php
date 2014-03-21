@@ -66,8 +66,26 @@
 <div class="bandheader">
 	<div class="container">
 		<div class="sixteen columns">
-			<h1 class="remove-bottom" style="margin-top: 40px">Formulari d'inscripció</h1>
+		
+			<?php if(isset($_SESSION['s_email'])) {?>
+		
+				<? if(isset($_GET[pass]) and $_GET[pass]=='yes'){?>
+					
+						<h1 class="remove-bottom" style="margin-top: 40px">Modificar Contrasenya</h1>
+					
+					<? } else { ?>
+			<h1 class="remove-bottom" style="margin-top: 40px">Panell de Control de <?=ucfirst($_SESSION['s_nom'])?> <?=ucfirst($_SESSION['s_cognoms'])?> </h1>
+			<a href="/logout.php?idioma=<?=$idioma?>" class="button">Tancar sessió</a>
+			
+			<? } //end if?>
+			<? } else {?>
+			
+			<h1 class="remove-bottom" style="margin-top: 40px">Formulari d'inscripció </h1>
 			<h5>Activitats d'estiu 2014</h5>
+			
+			
+			<? } ?>
+			
 		</div>
 	</div>
 </div><!--end bandheader-->

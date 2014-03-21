@@ -13,10 +13,10 @@
 
 <?php
 // Configura los datos de tu cuenta
-$dbhost='qqn276.futurecobioscience.com';
-$dbusername='qqn276';
-$dbuserpass='Fb1234321';
-$dbname='qqn276';
+$dbhost='localhost';
+$dbusername='root';
+$dbuserpass='root';
+$dbname='kinobs';
 // Conectar a la base de datos
 mysql_connect ($dbhost, $dbusername, $dbuserpass);
 mysql_select_db($dbname) or die('No se pudo seleccionar base de datos');

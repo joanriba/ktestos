@@ -18,7 +18,6 @@ $("#taularesum").tablesorter();
 		<th>Inici</th>
 		<th>Final</th>
 		<th>Preu</th>
-	</th>
 	</thead> 
  
 <?  
