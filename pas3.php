@@ -1,6 +1,5 @@
 <?php
 include('bdcon.php');
-$idioma=$_POST[idioma];
 $numeronens=$_POST[numeronens];
 include('data-europeu.php');
 
@@ -8,9 +7,7 @@ include('data-europeu.php');
 	//$birthday2 = new DateTime($birthday2); 
 	//$edat2 = $birthday2->diff(new DateTime);
 
-
 include('header.php');
- 
 ?>
 
 	<div class="bandresum">
@@ -18,9 +15,7 @@ include('header.php');
 		<div class="sixteen columns">
 		
 <? //REBEM L'ARRAY AMB TOTES LES DADES I LIDIOMA
-$llista = $_POST['xaval'];
-$idioma= $_POST[idioma];
-?>
+$llista = $_POST['xaval']; ?>
 
 					
 <? include('modul_resum.php');?>
@@ -53,13 +48,13 @@ $naixament=$coses[1];
 
 <div class="sixteen columns">
 
-<h1>Dades completes de <?=ucfirst($nom)?></h1>
+<h1><?=$word['dadescompletes'][$idioma]?> <?=ucfirst($nom)?></h1>
 
 </div>
 
 <div class="five columns">
 
-			<h3>Dades generals</h3>
+			<h3><?=$word['dadesgenerals'][$idioma]?></h3>
 			
 			<!--dades invisibles-->
 			<input type="hidden" name="nom<?=$n?>" value="<?=$nom?>">
@@ -88,14 +83,14 @@ $naixament=$coses[1];
 
 <div class="ten columns">
 
-			<h3>Fitxa mèdica</h3>
+			<h3><?=$word['fitxamedica'][$idioma]?></h3>
 
 		<div class="fitxamedica">
 		
 		<div class="four columns">			
 			
 			<!--select antitetanica-->
-			<label for="antitetanica">Antitetànica</label>
+			<label for="antitetanica"><?=$word['fantitetanica'][$idioma]?></label>
 						<select id="antitetanica<?=$n?>" name="antitetanica<?=$n?>" required>	
 							<option value=""></option>	
 							<option value="si">Sí</option>
@@ -103,13 +98,13 @@ $naixament=$coses[1];
 						</select>
 			
 			
-				<textarea style="display: none;" id="nomantitetanica<?=$n?>" name="nomantitetanica<?=$n?>" placeholder="Comentaris antitetànica"></textarea>
+				<textarea style="display: none;" id="nomantitetanica<?=$n?>" name="nomantitetanica<?=$n?>" placeholder="<?=$word['fnomantitetanica'][$idioma]?>"></textarea>
 
 						
 								
 						
 			<!--select Alèrgia-->
-			<label for="alergia">Alèrgia</label>
+			<label for="alergia"><?=$word['falergia'][$idioma]?></label>
 						<select id="alergia<?=$n?>" name="alergia<?=$n?>" required>
 							<option value=""></option>		
 							<option value="si">Sí</option>
@@ -117,13 +112,13 @@ $naixament=$coses[1];
 						</select>
 			
 			
-				<textarea style="display: none;" id="nomalergia<?=$n?>" name="nomalergia<?=$n?>" placeholder="Nom de les alèrgies"></textarea>
+				<textarea style="display: none;" id="nomalergia<?=$n?>" name="nomalergia<?=$n?>" placeholder="<?=$word['fnomalergia'][$idioma]?>"></textarea>
 						
 
 			
 			
 			<!--select Enfermetats cròniques-->
-			<label for="croniques">Enfermetats cròniques</label>
+			<label for="croniques"><?=$word['fcroniques'][$idioma]?></label>
 						<select id="croniques<?=$n?>" name="croniques<?=$n?>" required>		
 							<option value=""></option>
 							<option value="si">Sí</option>
@@ -131,11 +126,11 @@ $naixament=$coses[1];
 						</select>
 						
 			
-				<textarea style="display: none;" id="nomcroniques<?=$n?>" name="nomcroniques<?=$n?>" placeholder="Nom de les enfermetats cròniques"></textarea>			
+				<textarea style="display: none;" id="nomcroniques<?=$n?>" name="nomcroniques<?=$n?>" placeholder="<?=$word['fnomcroniques'][$idioma]?>"></textarea>			
 
 
 					<!--select intervingut-->
-			<label for="intervingut">intervingut</label>
+			<label for="intervingut"><?=$word['fintervingut'][$idioma]?></label>
 						<select id="intervingut<?=$n?>" name="intervingut<?=$n?>" required>
 							<option value=""></option>		
 							<option value="si">Sí</option>
@@ -143,7 +138,7 @@ $naixament=$coses[1];
 						</select>
 		
 					
-			<textarea style="display: none;" id="nomintervingut<?=$n?>" name="nomintervingut<?=$n?>" placeholder="Nom de les intervencions"></textarea>	
+			<textarea style="display: none;" id="nomintervingut<?=$n?>" name="nomintervingut<?=$n?>" placeholder="<?=$word['fnomintervingut'][$idioma]?>"></textarea>	
 
 
 						
@@ -213,7 +208,7 @@ $('#alergia<?=$n?>').bind('change', function (e) {
 			
 			
 			<!--select Discapacitat-->
-			<label for="discapacitat">Discapacitat</label>
+			<label for="discapacitat"><?=$word['fdiscapacitat'][$idioma]?></label>
 						<select id="discapacitat<?=$n?>" name="discapacitat<?=$n?>" required>
 							<option value=""></option>		
 							<option value="si">Sí</option>
@@ -221,7 +216,7 @@ $('#alergia<?=$n?>').bind('change', function (e) {
 						</select>
 						
 					
-			<textarea style="display: none;" id="nomdiscapacitat<?=$n?>" name="nomdiscapacitat<?=$n?>" placeholder="Nom de la discapacitat"></textarea>	
+			<textarea style="display: none;" id="nomdiscapacitat<?=$n?>" name="nomdiscapacitat<?=$n?>" placeholder="<?=$word['fnomdiscapacitat'][$idioma]?>"></textarea>	
 			
 <script type="text/javascript">
 $(document).ready( function() {
@@ -242,23 +237,23 @@ $(document).ready( function() {
 							
 						
 			<!-- Descripció del caràcter-->			
-			<label for="caracter">Descripció del caràcter</label>
+			<label for="caracter"><?=$word['fcaracter'][$idioma]?></label>
 			<textarea name="caracter<?=$n?>"></textarea>
 			
 			
 			<!-- Patologies de la llista-->			
-			<label for="patologies">Patologies de la llista</label>
+			<label for="patologies"><?=$word['fpatologies'][$idioma]?></label>
 			<input type="text" name="patologies<?=$n?>" value="">
 			
 			
 			<!-- Patologies de la llista-->			
-			<label for="patologies2">Altres patologies que tingui</label>
+			<label for="patologies2"><?=$word['fpatologies2'][$idioma]?></label>
 			<input type="text" name="patologies2<?=$n?>" value="">
 	
 
 	
 				<!--select autorització mèdica-->
-			<label for="autoritzaciomedica"><a class="demo">Autorització mèdica</a></label>
+			<label for="autoritzaciomedica"><a class="demo"><?=$word['fmedica'][$idioma]?></a></label>
 						<select name="autoritzaciomedica<?=$n?>" required>
 							<option value=""></option>		
 							<option value="si">Sí</option>
@@ -279,25 +274,25 @@ $(document).ready( function() {
 	<div class="container">
 	<div class="sixteen columns">
 	
-	<h2>Dades del tutor legal</h2>
+	<h2><?=$word['dadestutor'][$idioma]?></h2>
 	
 	</div><!--end sixteen-->
 	
 		<div class="one-third column">
 	
 	
-			<label for="nom">Nom del pare/mare/tutor legal</label>
+			<label for="nom"><?=$word['dadestutor'][$idioma]?></label>
 			<input type="text" name="nomtutor" value="" required>
 			
-			<label for="cognoms">Cognoms</label>
+			<label for="cognoms"><?=$word['pcognoms'][$idioma]?></label>
 			<input type="text" name="cognomstutor" value="" required>
 			
 
 						
-			<label for="tel1">Telèfon 1</label>			
+			<label for="tel1"><?=$word['tel1'][$idioma]?></label>			
 			<input type="text" name="tel1" value="" required>
 			
-			<label for="tel2">Telèfon 2</label>			
+			<label for="tel2"><?=$word['tel2'][$idioma]?></label>			
 			<input type="text" name="tel2" value="">
 
 			
@@ -308,13 +303,13 @@ $(document).ready( function() {
 		
 		
 			
-			<label for="tel3">Telèfon 3</label>			
+			<label for="tel3"><?=$word['tel3'][$idioma]?></label>			
 			<input type="text" name="tel3" value="">			
 			
-			<label for="email1">Email</label>			
+			<label for="email1"><?=$word['email'][$idioma]?></label>			
 			<input type="text" name="email1" value="" required>
 			
-			<label for="email2">Repeteix el teu email</label>			
+			<label for="email2"><?=$word['repeatemail'][$idioma]?></label>			
 			<input type="text" name="email2" value="">
 			
 			
@@ -325,14 +320,14 @@ $(document).ready( function() {
 		<div class="one-third column">
 			
 			
-			<label for="dni">DNI/NIF/Passaport</label>			
+			<label for="dni"><?=$word['dni'][$idioma]?></label>			
 			<input type="text" name="dni" value="" required>
 
 			
-			<label for="fammono">Numero carnet família monoparental</label>			
+			<label for="fammono"><?=$word['carnetmonoparental'][$idioma]?></label>			
 			<input type="text" name="fammono" value="">
 			
-			<label for="famnum">Numero carnet família nombrosa</label>			
+			<label for="famnum"><?=$word['carnetnombrosa'][$idioma]?></label>			
 			<input type="text" name="famnum" value="">
 					
 		</div><!--one-third column-->
@@ -355,7 +350,7 @@ foreach ($llista as $value) { $coses=explode('/',$value); $nom=$coses[0]; $naixa
 
 
 <div class="container">
-<div class="sixteen columns"><a class="button" href="www.kinobs.com" onclick="window.history.go(-1); return false;">Anterior</a><input type="submit" name="submit" value="Següent"/></div>
+<div class="sixteen columns"><a class="button" href="www.kinobs.com" onclick="window.history.go(-1); return false;"><?=$word['previous'][$idioma]?></a><input type="submit" name="submit" value="<?=$word['next'][$idioma]?>"/></div>
 </div><!--end container-->
 
 </form>

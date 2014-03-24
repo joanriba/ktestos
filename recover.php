@@ -75,13 +75,13 @@ include('admin/MailFunctions.php');
 		
 		    <form method="POST" action="?">
 		    
-		    		<h3>He oblidat la meva contrasenya</h3>
+		    		<h3><?=$word['forgot'][$idioma]?></h3>
       				
-      				<label for="email">Escriu teu Email</label>
+      				<label for="email"><?=$word['writeemail'][$idioma]?></label>
 	      			<input id="email" name="email" type="text" >
 	      			
 	      			<input type="hidden" name="idioma" value="<?=$idioma?>">		      
-	            	<input type="submit" name="submit" value="Recuperar"/>
+	            	<input type="submit" name="submit" value="<?=$word['recuperar'][$idioma]?>"/>
 	    
 	        </form>
  

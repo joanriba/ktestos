@@ -40,7 +40,7 @@ for ($n=1; $n<=$numeronens; $n++){?>
 
 
 <div class="five columns">
-			<h3>Dades generals</h3>
+			<h3><?=$word['dadesgenerals'][$idioma]?></h3>
 			
 			<input type="hidden" name="idioma" value="<?=$idioma?>">
 			<input type="hidden" name="numeronens" value="<?=$numeronens?>">
@@ -69,38 +69,38 @@ for ($n=1; $n<=$numeronens; $n++){?>
 </div>
 
 <div class="ten columns">
-			<h3>Fitxa mèdica</h3>
+			<h3><?=$word['fitxamedica'][$idioma]?></h3>
 			<div class="four columns">			
-			<strong>Antitetànica:</strong> <?=$_POST['antitetanica'.$n]?><br>
+			<strong><?=$word['fantitetanica'][$idioma]?>:</strong> <?=$_POST['antitetanica'.$n]?><br>
 			<input type="hidden" name="antitetanica<?=$n?>" value="<?=$_POST['antitetanica'.$n]?>">
-			<strong>Comentaris antitetànica:</strong> <?=$_POST['comentarisantitetanica'.$n]?><br>
+			<strong><?=$word['fnomantitetanica'][$idioma]?>:</strong> <?=$_POST['comentarisantitetanica'.$n]?><br>
 			<input type="hidden" name="nomantitetanica<?=$n?>" value="<?=$_POST['nomantitetanica'.$n]?>">
-			<strong>Alèrgia:</strong> <?=$_POST['alergia'.$n]?><br>
+			<strong><?=$word['falergia'][$idioma]?>:</strong> <?=$_POST['alergia'.$n]?><br>
 			<input type="hidden" name="alergia<?=$n?>" value="<?=$_POST['alergia'.$n]?>">
-			<strong>Nom de l'alèrgia:</strong> <?=$_POST['nomalergia'.$n]?><br>
+			<strong><?=$word['fnomalergia'][$idioma]?>:</strong> <?=$_POST['nomalergia'.$n]?><br>
 			<input type="hidden" name="nomalergia<?=$n?>" value="<?=$_POST['nomalergia'.$n]?>">
-			<strong>Enfermetats cròniques:</strong> <?=$_POST['croniques'.$n]?><br>
+			<strong><?=$word['fcroniques'][$idioma]?>:</strong> <?=$_POST['croniques'.$n]?><br>
 			<input type="hidden" name="croniques<?=$n?>" value="<?=$_POST['croniques'.$n]?>">		
-			<strong>Nom de les enfermetats cròniques:</strong> <?=$_POST['nomcroniques'.$n]?><br>
+			<strong><?=$word['fnomcroniques'][$idioma]?>:</strong> <?=$_POST['nomcroniques'.$n]?><br>
 			<input type="hidden" name="nomcroniques<?=$n?>" value="<?=$_POST['nomcroniques'.$n]?>">		
-			<strong>Intervingut:</strong> <?=$_POST['intervingut'.$n]?><br>
+			<strong><?=$word['fintervingut'][$idioma]?>:</strong> <?=$_POST['intervingut'.$n]?><br>
 			<input type="hidden" name="intervingut<?=$n?>" value="<?=$_POST['intervingut'.$n]?>">
 		</div><!--end four columns-->
 		
 		<div class="four columns">				
-			<strong>Intervencions que ha rebut:</strong> <?=$_POST['nomintervingut'.$n]?><br>
+			<strong><?=$word['fnomintervingut'][$idioma]?>:</strong> <?=$_POST['nomintervingut'.$n]?><br>
 			<input type="hidden" name="nomintervingut<?=$n?>" value="<?=$_POST['nomintervingut'.$n]?>">	
-			<strong>Discapacitat:</strong> <?=$_POST['discapacitat'.$n]?><br>
+			<strong><?=$word['fdiscapacitat'][$idioma]?>:</strong> <?=$_POST['discapacitat'.$n]?><br>
 			<input type="hidden" name="discapacitat<?=$n?>" value="<?=$_POST['nomdiscapacitat'.$n]?>">
-			<strong>Nom de la discapacitat:</strong> <?=$_POST['nomdiscapacitat'.$n]?><br>
+			<strong><?=$word['fnomdiscapacitat'][$idioma]?>:</strong> <?=$_POST['nomdiscapacitat'.$n]?><br>
 			<input type="hidden" name="nomdiscapacitat<?=$n?>" value="<?=$_POST['nomdiscapacitat'.$n]?>">	
-			<strong>Descripció del caràcter:</strong> <?=$_POST['caracter'.$n]?><br>
+			<strong><?=$word['fcaracter'][$idioma]?>:</strong> <?=$_POST['caracter'.$n]?><br>
 			<input type="hidden" name="caracter<?=$n?>" value="<?=$_POST['caracter'.$n]?>">
-			<strong>Patologies de la llista:</strong> <?=$_POST['patologies'.$n]?><br>
+			<strong><?=$word['fpatologies'][$idioma]?>:</strong> <?=$_POST['patologies'.$n]?><br>
 			<input type="hidden" name="patologies<?=$n?>" value="<?=$_POST['patologies'.$n]?>">
-			<strong>Altres patologies que tingui:</strong> <?=$_POST['patologies2'.$n]?><br>
+			<strong><?=$word['fpatologies2'][$idioma]?>:</strong> <?=$_POST['patologies2'.$n]?><br>
 			<input type="hidden" name="patologies2<?=$n?>" value="<?=$_POST['patologies2'.$n]?>">
-			<strong>Autorització mèdica:</strong> <?=$_POST['autoritzaciomedica'.$n]?><br>
+			<strong><?=$word['fmedica'][$idioma]?>:</strong> <?=$_POST['autoritzaciomedica'.$n]?><br>
 			<input type="hidden" name="autoritzaciomedica<?=$n?>" value="<?=$_POST['autoritzaciomedica'.$n]?>">
 	
 		</div><!--end four-->		
@@ -115,35 +115,35 @@ for ($n=1; $n<=$numeronens; $n++){?>
 	<div class="container">
 	<div class="sixteen columns">
 	
-	<h2>Dades del tutor legal</h2>
+	<h2><?=$word['dadestutor'][$idioma]?></h2>
 	
 	</div><!--end sixteen-->
 	
 		<div class="one-third column">
 	
 	
-			Nom del pare/mare/tutor legal: <?=$_POST[nomtutor]?><br>
+			<?=$word['nomdeltutor'][$idioma]?>: <?=$_POST[nomtutor]?><br>
 			<input type="hidden" name="nomtutor" value="<?=$_POST[nomtutor]?>">
-			Cognoms: <?=$_POST[cognomstutor]?><br>
+			<?=$word['fcognoms'][$idioma]?>: <?=$_POST[cognomstutor]?><br>
 			<input type="hidden" name="cognomstutor" value="<?=$_POST[cognomstutor]?>">
-			Telèfon 1: <?=$_POST[tel1]?><br>
+			<?=$word['tel1'][$idioma]?>: <?=$_POST[tel1]?><br>
 			<input type="hidden" name="tel1" value="<?=$_POST[tel1]?>">
-			Telèfon 2:<?=$_POST[tel2]?><br>
+			<?=$word['tel2'][$idioma]?>:<?=$_POST[tel2]?><br>
 			<input type="hidden" name="tel2" value="<?=$_POST[tel2]?>">
-			Telèfon 3:<?=$_POST[tel3]?><br>	
+			<?=$word['tel3'][$idioma]?>:<?=$_POST[tel3]?><br>	
 			<input type="hidden" name="tel3" value="<?=$_POST[tel3]?>">
 		</div><!--tanca primer one-third-->
 		
 		<div class="one-third column">			
-			Email 1: <?=$_POST[email1]?><br>
+			<?=$word['email'][$idioma]?>: <?=$_POST[email1]?><br>
 			<input type="hidden" name="email1" value="<?=$_POST[email1]?>">
 			
 			
-			DNI: <?=$_POST[dni]?><br>
+			<?=$word['dni'][$idioma]?>: <?=$_POST[dni]?><br>
 			<input type="hidden" name="dni" value="<?=$_POST[dni]?>">
-			Numero carnet família monoparental: <?=$_POST[fammono]?><br>
+			<?=$word['carnetmonoparental'][$idioma]?>: <?=$_POST[fammono]?><br>
 			<input type="hidden" name="fammono" value="<?=$_POST[fammono]?>">			
-			Numero carnet família nombrosa: <?=$_POST[famnum]?><br>
+			<?=$word['carnetnombrosa'][$idioma]?>: <?=$_POST[famnum]?><br>
 			<input type="hidden" name="famnum" value="<?=$_POST[famnum]?>">
 		</div><!--one-third-->
 		
@@ -170,8 +170,8 @@ foreach ($llista as $value) { $coses=explode('/',$value); $nom=$coses[0]; $naixa
 <!-- **********************-->
 	
 	
-	<a class="button" href="www.kinobs.com" onclick="window.history.go(-1); return false;">Anterior</a>
-	<input type="submit" name="submit" value="Finalitzar"/>
+	<a class="button" href="www.kinobs.com" onclick="window.history.go(-1); return false;"><?=$word['previous'][$idioma]?></a>
+	<input type="submit" name="submit" value="<?=$word['finalitzar'][$idioma]?>"/>
 	</form>
 </div>
 </div><!--end container-->

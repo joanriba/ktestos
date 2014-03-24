@@ -108,6 +108,13 @@ div.fitxamedica{ border: 1px dotted $blaukinobs; @include rounded; float: left;}
 
 form.users{ background-color: $blaukinobs; @include rounded; @include boxshadow-soft; padding: 20px; h2{ color: $blanc;}}
 
+a.three1, a.three2, a.three3{ text-decoration: none; color: $griskinobs; &:hover{ text-decoration: underline;}}
+
+a.three1{ span{ color: red;}}
+a.three2{ span{ color: green;}}
+a.three3{ span{ color: blue;}}
+
+a.red{ color: red;}
 
 /* #Buttons
 ================================================== */

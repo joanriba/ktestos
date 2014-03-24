@@ -1,16 +1,18 @@
 <?php
- 
 //var_dump("ok"); die();
+if(!isset($_GET['idioma'])){  
+	if(isset($_POST['idioma'])){ $idioma=$_POST['idioma']; } else { $idioma='ca';} 
+} else {$idioma=$_GET['idioma'];}
+
 //connectem a la base de dades
 include('bdcon.php');
 include('functions.php');
-
+include('textos.php');
 
 //Rebem les dades estructurals
 $idioma=$_POST[idioma];
 $llista=$_POST[llista];
 $numeronens=$_POST[numeronens];
-
 
 //*********************************
 //Incorporem les dades a les taules

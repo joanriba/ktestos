@@ -7,10 +7,6 @@
 </head>
 <body>
 
-
-
-
-
 <?php
 // Configura los datos de tu cuenta
 $dbhost='localhost';

@@ -38,8 +38,8 @@
 <div class="bandheader">
 	<div class="container">
 		<div class="sixteen columns">
-			<h1 class="remove-bottom" style="margin-top: 40px">Comprovant d\'inscripció</h1>
-			<p>Imprimeix aquest document i porta\'l abans de 10 díes hàbils al nostre centre Kinobs per formalitzar la inscripció</p>
+			<h1 class="remove-bottom" style="margin-top: 40px">'.$word['comprovant'][$idioma].'</h1>
+			<p>'.$word['textcomprovant'][$idioma].'</p>
 		</div>
 	</div>
 </div><!--end bandheader-->
@@ -51,24 +51,24 @@
 	<div class="container">
 	<div class="sixteen columns">
 	
-	<h2>Dades del tutor legal</h2>
+	<h2>'.$word['dadestutor'][$idioma].'</h2>
 	</div><!--end sixteen-->
 	
 		<div class="one-third column">
 	
 	
 			'.ucfirst($_POST[nomtutor]).'&nbsp;'.$_POST[cognomstutor].'<br>
-			Telèfon 1: '.$_POST[tel1].'<br>
-			Telèfon 2: '.$_POST[tel2].'<br>
-			Telèfon 3: '.$_POST[tel3].'<br>	
+			'.$word['tel1'][$idioma].': '.$_POST[tel1].'<br>
+			'.$word['tel2'][$idioma].': '.$_POST[tel2].'<br>
+			'.$word['tel3'][$idioma].': '.$_POST[tel3].'<br>	
 			
 		</div><!--tanca primer one-third-->
 		
 		<div class="one-third column">			
-			Email 1: '.$_POST[email1].'<br>
-			DNI: '.$_POST[dni].'<br>
-			Numero carnet família monoparental: '.$_POST[fammono].'<br>
-			Numero carnet família nombrosa: '.$_POST[famnum].'<br>
+			'.$word['email'][$idioma].': '.$_POST[email1].'<br>
+			'.$word['dni'][$idioma].': '.$_POST[dni].'<br>
+			'.$word['carnetmonoparental'][$idioma].': '.$_POST[fammono].'<br>
+			'.$word['carnetnombrosa'][$idioma].': '.$_POST[famnum].'<br>
 			
 		</div><!--one-third-->
 		
@@ -89,11 +89,11 @@
 <table id="taularesum" width="100%" class="tablesorter">
 	<thead>
 		<tr>
-		<th>Nom</th>
-		<th>Activitat</th>
-		<th>Inici</th>
-		<th>Final</th>
-		<th>Preu</th>
+		<th>'.$word['pnom'][$idioma].'</th>
+		<th>'.$word['nactivitat'][$idioma].'</th>
+		<th>'.$word['ninici'][$idioma].'</th>
+		<th>'.$word['nfinal'][$idioma].'</th>
+		<th>'.$word['npreu'][$idioma].'</th>
 	</th>
 	</thead>'; 
 	
@@ -113,11 +113,14 @@ foreach($llista as $value){
 	
 	while($row=mysql_fetch_array($moduls)){ 
 
-		$nomactivitatca=$row[nomactivitatca]; $dinici=$row[dinici]; $dfinal=$row[dfinal]; $preu=$row[preu]; $preutotal[]=$row[preu];
+		$nomactivitatca=$row[nomactivitatca]; $nomactivitates=$row[nomactivitates]; $dinici=$row[dinici]; $dfinal=$row[dfinal]; $preu=$row[preu]; $preutotal[]=$row[preu];
 	
-		$inici= FechaFormateada_ca(strtotime($row[dinici]));
-		$final= FechaFormateada_ca(strtotime($row[dfinal])); 
+		$inicica= FechaFormateada_ca(strtotime($row[dinici]));
+		$finalca= FechaFormateada_ca(strtotime($row[dfinal])); 
+		$inicies= FechaFormateada_es(strtotime($row[dinici]));
+		$finales= FechaFormateada_es(strtotime($row[dfinal])); 
 		
+		if($idioma=='ca'){ $nomactivitat=$nomactivitatca and $inici=$inicica and $final=$finalca;} else if($idioma=='es'){ $nomactivitat=$nomactivitatca and $inici=$inicies and $final=$finales;}
 		 
     }
     
@@ -125,7 +128,7 @@ foreach($llista as $value){
     	$table .='
     	<tr>
 			<td>'.ucfirst($nom).'</td>
-			<td>'.$nomactivitatca.'</td>
+			<td>'.$nomactivitat.'</td>
 			<td>'.$inici.'</td>
 			<td>'.$final.'</td>
 			<td>'.$preu.'</td>

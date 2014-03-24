@@ -3,7 +3,6 @@ include('../bdcon.php');
 include('security.php');
 include('menu.php');
 $id=$_GET[id];
-echo $id;
 ?>
 
 <div class="bandcontent-admin">
@@ -13,7 +12,8 @@ echo $id;
 		
 				<? $nen=mysql_query("select nens.*, pares.id as idpare,pares.nom as nompare, pares.cognoms as cognomspare from nens inner join pares on nens.idpare=pares.id where nens.id=$id",$cxn);
 			while($row=mysql_fetch_array($nen)){
-		
+					
+					$idpare=$row[idpare];
 					$birthday = new DateTime($row[birthdate]);
 					$interval = $birthday->diff(new DateTime);
 					
@@ -58,7 +58,7 @@ echo $id;
 				<strong>Descripció del caràcter:</strong> <?=$row[caracter]?><br><br>
 				
 				<strong>Patologies:</strong> <?=$row[patologies]?><br>
-				<strong>Camp lliure patologies:</strong> <?=$row[patologies2]?><br><br>
+				<strong>Altres patologies:</strong> <?=$row[patologies2]?><br><br>
 				
 				<strong>Autorització mèdica:</strong> <?=$row[autoritzaciomedica]?>
 				
@@ -77,7 +77,7 @@ echo $id;
 			<h3>Dades del tutor legal</h3>
 			
 			
-			<? $pare=mysql_query("select * from pares where id=$id",$cxn);
+			<? $pare=mysql_query("select * from pares where id='$idpare'",$cxn);
 			while($row=mysql_fetch_array($pare)){ ?>
 				
 				
@@ -95,10 +95,11 @@ echo $id;
 				<strong>Familia nombrosa:</strong> <?=$row[famnum]?><br>
 				<strong>Familia monoparental:</strong> <?=$row[fammono]?>
 				
-				<br>
-				<strong>Entitat:</strong> <?=$row[entitat]?><br>
+				<br><br>
+				<a class="kinobsbutton" href="pare_publicar.php?id=<?=$idpare?>&nen=<?=$id?>">modificar dades del tutor</a>
+				<!--<strong>Entitat:</strong> <?=$row[entitat]?><br>
 				<strong>Titular entitat:</strong> <?=$row[titular]?>
-				<span class="formapago"><?=$row[formapago]?></span>
+				<span class="formapago"><?=$row[formapago]?></span>-->
 			
 			<? } ?>
 			

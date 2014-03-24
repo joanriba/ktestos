@@ -1,3 +1,13 @@
+<? 
+if(!isset($_GET['idioma'])){  
+	
+	if(isset($_POST['idioma'])){ $idioma=$_POST['idioma']; } else { $idioma='ca';} 
+	
+} else {$idioma=$_GET['idioma'];}
+
+
+
+include('textos.php');?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
@@ -71,17 +81,17 @@
 		
 				<? if(isset($_GET[pass]) and $_GET[pass]=='yes'){?>
 					
-						<h1 class="remove-bottom" style="margin-top: 40px">Modificar Contrasenya</h1>
+						<h1 class="remove-bottom" style="margin-top: 40px"><?=$word['changepassword'][$idioma]?></h1>
 					
 					<? } else { ?>
-			<h1 class="remove-bottom" style="margin-top: 40px">Panell de Control de <?=ucfirst($_SESSION['s_nom'])?> <?=ucfirst($_SESSION['s_cognoms'])?> </h1>
+			<h1 class="remove-bottom" style="margin-top: 40px"><?=$word['panelldecontrol'][$idioma]?> <?=ucfirst($_SESSION['s_nom'])?> <?=ucfirst($_SESSION['s_cognoms'])?> </h1>
 			<a href="/logout.php?idioma=<?=$idioma?>" class="button">Tancar sessió</a>
 			
 			<? } //end if?>
 			<? } else {?>
 			
-			<h1 class="remove-bottom" style="margin-top: 40px">Formulari d'inscripció </h1>
-			<h5>Activitats d'estiu 2014</h5>
+			<h1 class="remove-bottom" style="margin-top: 40px"><?=$word['titolgeneral'][$idioma]?></h1>
+			<h5><?=$word['summer2014'][$idioma]?></h5>
 			
 			
 			<? } ?>

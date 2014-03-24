@@ -1,15 +1,11 @@
 <?php
 include('bdcon.php');
 
+include('header.php');
+
 $numeronens=$_POST[numeronens];
 include('data-europeu.php');
 
-
-$idioma=$_POST[idioma];
-
-
-include('header.php');
- 
 ?>
 
 	<div class="bandresum">
@@ -17,7 +13,7 @@ include('header.php');
 		<div class="sixteen columns">
 		
 			
-			<h3>Vols inscriure a:</h3>
+			<h3><?=$word['volsinscriurea'][$idioma]?></h3>
  				
  				
  				<ul class="volsinscriure">
@@ -32,7 +28,7 @@ include('header.php');
  					?>
  					 
  					<? echo $edat->y;?>
- 					anys</span><br> <em>(<?=$birthday?>)</em></li>
+ 					<?=$word['years'][$idioma]?> </span><br> <em>(<?=$birthday?>)</em></li>
  						
  				
  				<? } ?>
@@ -50,7 +46,7 @@ include('header.php');
  		
 	 			 <form class="inscripcio" method="post" action="pas3.php">
  	
- 				<h3>Selecciona les activitats</h3>
+ 				<h3><?=$word['selectactivities'][$idioma]?></h3>
  				
  				<!-- FEM EL LOOP DE MÒDULS-->
  				<? $activitats=mysql_query("select * from activitats",$cxn);
@@ -58,14 +54,19 @@ include('header.php');
 	 				
 	 				<div class="activitats">
 	 						
-	 						<h1><?=$row[nomca]?></h1>
-	 						<p><?=$row[desca]?>
+	 						<h1><? if($idioma=='ca'){ echo $row[nomca];} else if($idioma=='es'){ echo $row[nomes];}?></h1>
+	 						<p><? if( $idioma=='ca') {echo $row[desca];} else if($idioma=='es'){ echo $row[deses];}?></p>
 	 				
 							<? $moduls=mysql_query("select * from moduls where idactivitat='$row[id]'",$cxn);
 								while($raw=mysql_fetch_array($moduls)){
 									
-									$inici= FechaFormateada_ca(strtotime($raw[dinici]));
-									$final= FechaFormateada_ca(strtotime($raw[dfinal]));
+									$inicica= FechaFormateada_ca(strtotime($raw[dinici]));
+									$finalca= FechaFormateada_ca(strtotime($raw[dfinal]));
+									
+									$inicies= FechaFormateada_es(strtotime($raw[dinici]));
+									$finales= FechaFormateada_es(strtotime($raw[dfinal]));
+									
+									if($idioma=='ca'){ $inici=$inicica and $final=$finalca;} else if($idioma=='es'){ $inici=$inicies and $final=$finales;}
 									
 								?>
 								
@@ -132,9 +133,9 @@ include('header.php');
                   
           <!-- <a href="index.php?numeronens=<?=$numeronens?>" class="button">Anterior</a>-->
            
-           <a class="button" href="www.kinobs.com" onclick="window.history.go(-1); return false;">Anterior</a>
+           <a class="button" href="www.kinobs.com" onclick="window.history.go(-1); return false;"><?=$word['previous'][$idioma]?></a>
            
-            <input type="submit" value="Següent"/>
+            <input type="submit" value="<?=$word['next'][$idioma]?>"/>
       </form>
 
     

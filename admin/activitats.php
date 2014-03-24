@@ -74,10 +74,29 @@ $avui=date('Y-m-d');
 						&nbsp;&nbsp;&nbsp;&nbsp;<em>Max.nens: <?=$row[maximnens]?></em> <span class="taronja"><?=$row[preu]?>€</span> 
 						
 						<? if($avui < $row[dfinal]) {$status='futur';} else if($avui > $row[dfinal]){$status='passat';}?>
-						<span class="pastilleta <?=$status?>"><?=$status?></span></p>
-						<p></p>
-					
-					
+						<span class="pastilleta <?=$status?>"><?=$status?></span>
+						
+						
+						
+						<?
+						$preinscrits=mysql_query("select * from historial where idmodul='$row[idmodul]' and status='preinscrit'",$cxn);
+						$inscrits=mysql_query("select * from historial where idmodul='$row[idmodul]' and status='inscrit'",$cxn); 
+						$total=mysql_query("select * from historial where idmodul='$row[idmodul]'",$cxn);
+						
+						$totalnens=mysql_num_rows($total);
+						$preinscritsfinal=mysql_num_rows($preinscrits);
+						$inscritsfinal=mysql_num_rows($inscrits);
+						
+						 ?>
+						
+						<a class="three1" href="historial.php?id=<?=$row[idmodul]?>">Preinscrits: <span><?=$preinscritsfinal?></span></a> &nbsp;&nbsp; 
+						<a class="three2" href="historial.php">Inscrits:  <span><?=$inscritsfinal?></span></a> &nbsp;&nbsp; 
+						<a class="three3" href="historial.php">Totals:  <span><?=$totalnens?></span></a>
+						
+						</p>
+						
+						
+
 					
 					</div>
 					

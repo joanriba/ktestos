@@ -559,6 +559,24 @@ form.users {
   form.users h2 {
     color: white; }
 
+a.three1, a.three2, a.three3 {
+  text-decoration: none;
+  color: #4c4c4c; }
+  a.three1:hover, a.three2:hover, a.three3:hover {
+    text-decoration: underline; }
+
+a.three1 span {
+  color: red; }
+
+a.three2 span {
+  color: green; }
+
+a.three3 span {
+  color: blue; }
+
+a.red {
+  color: red; }
+
 /* #Buttons
 ================================================== */
 a.submit {

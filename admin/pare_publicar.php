@@ -1,7 +1,5 @@
 <?php 
-
 ini_set( "memory_limit", "600M" );
-
 include('../bdcon.php');
 include('security.php');
 include('menu.php');
@@ -34,8 +32,9 @@ echo '<script>document.location = "pares.php"</script>';
 //EDITAR
 if (isset($_POST['reenviar'])) {
 
-$result = mysql_query("update pares set nom='$_POST[nom]', cognoms='$_POST[cognoms]', tel1='$_POST[tel1]', tel2='$_POST[tel2]', tel3='$_POST[tel3]', email1='$_POST[email1]', email2='$_POST[email2]', dni='$_POST[dni]', famnum='$_POST[famnum]', fammono='$_POST[fammono]', entitat='$_POST[entitat]',titular='$_POST[titular]', formapago='$_POST[formapago]', observacions='$_POST[observacions]' where id='$_POST[id]'", $cxn);
+$result = mysql_query("update pares set nom='$_POST[nom]', cognoms='$_POST[cognoms]', tel1='$_POST[tel1]', tel2='$_POST[tel2]', tel3='$_POST[tel3]', email1='$_POST[email1]', dni='$_POST[dni]', famnum='$_POST[famnum]', fammono='$_POST[fammono]', observacions='$_POST[observacions]' where id='$_POST[id]'", $cxn);
 
+if(isset($_POST['nen'])){ echo '<script>document.location = "nen.php?id='.$_POST[nen].'"</script>'; }
 //tornem enrere
 echo '<script>document.location = "pares.php"</script>';
 } ?>
@@ -45,8 +44,8 @@ echo '<script>document.location = "pares.php"</script>';
 //COLOCAR DADES PER EDITAR
 $consulta=mysql_query("select * from pares where id=$id",$cxn);
 while($row=mysql_fetch_array($consulta)){
-$nom=$row[nom];$cognoms=$row[cognoms];$tel1=$row[tel1];$tel2=$row[tel2];$tel3=$row[tel3];$email1=$row[email1]; $email2=$row[email2]; $dni=$row[dni];
-$famnum=$row[famnum];$fammono=$row[fammono]; $entitat=$row[entitat]; $numcompte=$row[numcompte]; $titular=$row[titular]; $formapago=$row[formapago]; $observacions=$row[observacions];}
+$nom=$row[nom];$cognoms=$row[cognoms];$tel1=$row[tel1];$tel2=$row[tel2];$tel3=$row[tel3];$email1=$row[email1]; $dni=$row[dni];
+$famnum=$row[famnum];$fammono=$row[fammono]; $observacions=$row[observacions];}
 ?>    
 
 
@@ -68,6 +67,8 @@ $famnum=$row[famnum];$fammono=$row[fammono]; $entitat=$row[entitat]; $numcompte=
 			<!-- la id en el cas de que estiguem editant-->
 			<input type="hidden" name="id" value="<?=$id?>">					
 			
+			
+			<input type="hidden" name="nen" value="<?=$_GET[nen]?>">
 			
 			<label for="nom">Nom del pare/mare/tutor legal</label>
 			<input type="text" name="nom" value="<? if(isset($id)){ echo $nom;}?>">
@@ -91,8 +92,8 @@ $famnum=$row[famnum];$fammono=$row[fammono]; $entitat=$row[entitat]; $numcompte=
 			<label for="email1">Email 1</label>			
 			<input type="text" name="email1" value="<? if(isset($id)){ echo $email1;}?>">
 			
-			<label for="email2">Email 2</label>			
-			<input type="text" name="email2" value="<? if(isset($id)){ echo $email2;}?>">
+			<!--<label for="email2">Email 2</label>			
+			<input type="text" name="email2" value="<? if(isset($id)){ echo $email2;}?>">-->
 			
 			<label for="dni">DNI</label>			
 			<input type="text" name="dni" value="<? if(isset($id)){ echo $dni;}?>">
@@ -111,7 +112,7 @@ $famnum=$row[famnum];$fammono=$row[fammono]; $entitat=$row[entitat]; $numcompte=
 			
 			
 			
-			<h3>Dades bancàries</h3>
+			<!--<h3>Dades bancàries</h3>
 			
 			
 			<label for="entitat">Entitat bancària</label>			
@@ -123,14 +124,14 @@ $famnum=$row[famnum];$fammono=$row[fammono]; $entitat=$row[entitat]; $numcompte=
 			
 	
 			
-				<!--select forma de pagament-->
+				
 			<label for="formapago">Forma de pagament</label>
 						<select name="formapago">		
 							<? if(isset($id)){ ?><option value="<?=$formapago?>">Actualment: <?=$formapago?></option><? } ?>
 							<option value="transf">Transferència bancaria</option>
 							<option value="efectiu">Efectiu</option>
 						</select>
-			
+			-->
 			
 			<label for="observacions">Observacions</label>
 			<textarea name="observacions"><? if(isset($id)){ echo $observacions;}?></textarea>

@@ -1,5 +1,4 @@
 <?php
-$idioma='ca'; 
 include('header.php');?>
 
 
@@ -11,7 +10,7 @@ include('header.php');?>
 	
 	<? if(isset($_POST['submit'])){?>
 	
-		<h3>Primer nom i data de naixament</h3>
+		<h3><?=$word['nomidata'][$idioma]?></h3>
 	
 	<? $numeronens=$_POST[numeronens];
 		
@@ -19,15 +18,16 @@ include('header.php');?>
 		
 			<form id="nomsnens" class="inscripcio" method="post" action="pas2.php" data-parsley-validate>
 			
+			<input type="hidden" name="idioma" value="<?=$idioma?>">
 			<input type="hidden" name="numeronens" value="<?=$numeronens?>">
 			
 			<div>
 			
-			<div style="display: inline-block;"><input type="text" placeholder="Nom <?=$i?>" name="fill<?=$i?>" value="" class="form-control" required/></div>
+			<div style="display: inline-block;"><input type="text" placeholder="<?=$word['pnom'][$idioma]?> <?=$i?>" name="fill<?=$i?>" value="" class="form-control" required/></div>
 			
 			<div style="display: inline-block;"> 
               <select style="width: 80px;" name="dia<?=$i?>" data-trigger="change" required>
-	              <option value="">Día</option>
+	              <option value=""><?=$word['day'][$idioma]?></option>
 	              <option value="01">01</option>
 	              <option value="02">02</option>
 	              <option value="04">03</option>
@@ -86,7 +86,7 @@ include('header.php');?>
               <div style="display: inline-block;"> 
               <select style="width: 80px;" name="any<?=$i?>" required>
               
-	              <option value="">Any</option>
+	              <option value=""><?=$word['year'][$idioma]?></option>
 	              <? for ($x=1995; $x<=2012; $x++) {?>
 	              <option value="<?=$x?>"><?=$x?></option>
 	              <? } ?>
@@ -108,8 +108,8 @@ include('header.php');?>
 	
 				
 				<input type="hidden" name="idioma" value="<?=$idioma?>"/>
-				<a href="index.php" class="submit">Anterior</a>
-				<input type="submit" name="submit2" value="Següent"/>
+				<a href="index.php" class="submit"><?=$word['previous'][$idioma]?></a>
+				<input type="submit" name="submit2" value="<?=$word['next'][$idioma]?>"/>
 			
 			</form>
 			
@@ -132,14 +132,14 @@ include('header.php');?>
  
       <form class="inscripcio" method="post" action="?" enctype="multipart/form-data">
 		
-		<h3>Quants nens vols inscriure?</h3>
+		<h3><?=$word['howmanykids'][$idioma]?></h3>
 		
 			
 			<input type="number" name="numeronens" value="<? if(isset($_GET[numeronens])){ echo $_GET[numeronens];}?>">
 			              
  
             <input type="hidden" name="idioma" value="<?=$idioma?>"/>
-            <input type="submit" name="submit" value="Següent"/>
+            <input type="submit" name="submit" value="<?=$word['next'][$idioma]?>"/>
 
            
       </form>
@@ -157,17 +157,17 @@ include('header.php');?>
 		
 		    <form class="users" id="loginForm" method="POST" action="?">
 		    
-		    		<h2>Ja sóc usuari</h2>
+		    		<h2><?=$word['iammember'][$idioma]?></h2>
       				
-      				<label for="email">Email</label>
+      				<label for="email"><?=$word['email'][$idioma]?></label>
 	      			<input id="email" name="email" type="text" >
 	      			
-	      			<label for="password">Contrasenya</label> 
+	      			<label for="password"><?=$word['password'][$idioma]?></label> 
 	            	<input id="pass" name="password" type="password" value="">
 	    
 	            	<input type="submit" id="submitButton" name="submitButton" value="Accedir"/>
 	            	
-	            	<a href="recover.php?idioma=<?=$idioma?>">He oblidat la meva contrasenya</a>       
+	            	<a href="recover.php?idioma=<?=$idioma?>"><?=$word['forgot'][$idioma]?></a>       
 	        </form>
 	        
       
