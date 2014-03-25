@@ -2,7 +2,7 @@
 include('bdcon.php');
 
 include('header.php');
-
+include('bdcon.php');
 $numeronens=$_POST[numeronens];
 include('data-europeu.php');
 
@@ -28,7 +28,7 @@ include('data-europeu.php');
  					?>
  					 
  					<? echo $edat->y;?>
- 					<?=$word['years'][$idioma]?> </span><br> <em>(<?=$birthday?>)</em></li>
+ 					<?=$word['years'][$idioma]?> </span><br> <!--<em>(<?=$birthday?>)</em>--></li>
  						
  				
  				<? } ?>
@@ -74,13 +74,13 @@ include('data-europeu.php');
 									
 									<div class="frontmodul">
 									
-										
-									
-										
+			
 									
 									<div class="infomodul">
 									
 										<p>Del <strong><?=$inici?></strong> al <strong><?=$final?></strong></p>
+										
+										<p class="apartir"><span>*</span><?=$word['apartir'][$idioma]?> <?=$raw[edat]?> <?=$word['years'][$idioma]?></p>
 										
 									</div>
 										
@@ -94,14 +94,53 @@ include('data-europeu.php');
 											$birthday=$_POST['any'.$i].'-'.$_POST['mes'.$i].'-'.$_POST['dia'.$i];
 											$birthday2= new DateTime($birthday);
 											$edat= $birthday2->diff(new DateTime);		
-											?>
+
+
+
+											//mirem al historial a veure si el mòdul ja està ple
+											$historial=mysql_query("select id,status from historial where idmodul='$raw[id]' and status='inscrit'",$cxn);
+											$numentrades=mysql_num_rows($historial); $hola='hola';?>
 											
 											
+											<? if($numentrades >= $raw[maximnens]) {?>
 											
-											<label for="neninside">
-											<input type="checkbox" id="regularCheckbox<?=$i?>" name="xaval[]" value="<?=$_POST['fill'.$i]?>/<?=$birthday?>/<?=$raw[id]?>/<?=$numeronens?>"/>
+												<small>Activitat plena</small>
+												
+												
+												<label for="neninside">	
+										<input type="checkbox" disabled id="regularCheckbox<?=$i?>" name="xaval[]" value="<?=$_POST['fill'.$i]?>/<?=$birthday?>/<?=$raw[id]?>/<?=$numeronens?>"/>
 											<span><?=ucfirst($_POST['fill'.$i])?></span>
 											</label>
+												
+												
+											
+											<? } else {?>
+											
+											<? if($raw[edat] > $edat->y){ ?>	
+											
+											<label for="neninside">	
+										<input type="checkbox" disabled id="regularCheckbox<?=$i?>" name="xaval[]" value="<?=$_POST['fill'.$i]?>/<?=$birthday?>/<?=$raw[id]?>/<?=$numeronens?>"/>
+											<span><?=ucfirst($_POST['fill'.$i])?></span>
+											</label>
+												
+												
+											<? } else { ?>
+												
+												<label for="neninside">
+												<input type="checkbox" id="regularCheckbox<?=$i?>" name="xaval[]" value="<?=$_POST['fill'.$i]?>/<?=$birthday?>/<?=$raw[id]?>/<?=$numeronens?>"/>
+											<span><?=ucfirst($_POST['fill'.$i])?></span>
+											</label>
+												
+												
+											<? } ?>
+											<? } //tanca if activitat plena ?>
+											
+											
+											
+											
+											
+											
+											
 
 										
 											<? } ?>

@@ -447,6 +447,9 @@ div.bandform {
   border-bottom: 1px solid #dadadb;
   padding: 15px 0px; }
 
+.bandalert {
+  margin: 50px 0px; }
+
 .bandresum {
   background-color: white;
   padding: 15px 0px;
@@ -521,7 +524,11 @@ table#taularesum tfoot {
     font-size: 1.2em; }
 
 ul.volsinscriure li {
-  background-color: #a4bfc1;
+  border: 5px solid red;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
+  background-color: white;
   display: inline-block;
   -webkit-border-radius: 0.5em;
   -moz-border-radius: 0.5em;
@@ -534,11 +541,11 @@ ul.volsinscriure li {
   ul.volsinscriure li span.nom {
     font-size: 1.5em;
     font-weight: bold;
-    color: white; }
+    color: #e2002e; }
   ul.volsinscriure li span.edat {
-    color: white; }
+    color: #4c4c4c; }
   ul.volsinscriure li em {
-    color: white; }
+    color: #4c4c4c; }
 
 div.fitxamedica {
   border: 1px dotted #3389d7;
@@ -577,6 +584,17 @@ a.three3 span {
 a.red {
   color: red; }
 
+table.nomiedat td {
+  padding: 0px 5px;
+  vertical-align: middle; }
+
+p.apartir {
+  font-size: 1em;
+  font-style: italic; }
+  p.apartir span {
+    font-size: 1.5em;
+    color: #3389d7; }
+
 /* #Buttons
 ================================================== */
 a.submit {
@@ -602,7 +620,7 @@ a.submit {
   border-radius: 3px;
   color: #444;
   display: inline-block;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: bold;
   text-decoration: none;
   text-shadow: 0 1px rgba(255, 255, 255, 0.75);

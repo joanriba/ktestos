@@ -25,7 +25,7 @@ $llista = $_POST['xaval']; ?>
 	</div><!--end bandresum-->
 
 	
-<form id="dadesnens" method="post" action="pas4.php" data-parsley-validate>
+<form id="dadesnens" method="post" action="pas4.php" enctype="multipart/form-data" data-parsley-validate>
 
 	<input type="hidden" name="idioma" value="<?=$idioma?>">
 	<input type="hidden" name="numeronens" value="<?=$numeronens?>">
@@ -140,7 +140,10 @@ $naixament=$coses[1];
 					
 			<textarea style="display: none;" id="nomintervingut<?=$n?>" name="nomintervingut<?=$n?>" placeholder="<?=$word['fnomintervingut'][$idioma]?>"></textarea>	
 
-
+			
+			<label for="fitxa"><?=$word['attachfile'][$idioma]?></label>
+			<input type="file" name="fitxa<?=$n?>" id="fitxa<?=$n?>">
+			
 						
 <script type="text/javascript">
 $(document).ready( function() {
@@ -259,6 +262,15 @@ $(document).ready( function() {
 							<option value="si">Sí</option>
 							<option value="no">No</option>
 						</select>
+						
+						
+				<!--select autorització mèdica-->
+			<label for="autoritzaciomedicab"><a class="demo"><?=$word['fmedica'][$idioma]?></a></label>
+						<select name="autoritzaciomedicab<?=$n?>" required>
+							<option value=""></option>		
+							<option value="si">Sí</option>
+							<option value="no">No</option>
+						</select>			
 				
 					
 </div><!--end four-->

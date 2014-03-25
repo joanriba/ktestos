@@ -38,6 +38,7 @@
 <div class="bandheader">
 	<div class="container">
 		<div class="sixteen columns">
+			<p>Id Comanda: '.$idcomanda.'</p>
 			<h1 class="remove-bottom" style="margin-top: 40px">'.$word['comprovant'][$idioma].'</h1>
 			<p>'.$word['textcomprovant'][$idioma].'</p>
 		</div>

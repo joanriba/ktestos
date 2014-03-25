@@ -1,16 +1,45 @@
 <?php
 include('bdcon.php');
-include('data-europeu.php');
-include('header.php');
-
-
 //REBEM LES DADES ESTRUCTURALS
 $idioma=$_POST[idioma];
+
+
+
+//**************************************************
+//Verifiquem que el correu no està en ús
+//**************************************************
+$query1=mysql_query("select email1 from pares",$cxn);
+$sql=mysql_query("SELECT email1 FROM pares WHERE email1='$_POST[email1]'");
+ if(mysql_num_rows($sql)>=1){ 
+	 
+	 include('textos.php');
+ ?>
+
+ 	
+ 	<html lang="ca"><head>
+	<meta charset="utf-8">
+	<title><?=$word['titleemailused'][$idioma]?></title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="css/base.css"><link rel="stylesheet" href="css/skeleton.css"><link rel="stylesheet" href="css/layout.css"></head><body>
+	<div class="bandkinobs"><img src="/img/logo-kinobs.png"></div>
+	<div class="bandalert"><div class="container">
+<div class="four columns"><img src="/img/emailalert.png"></div>
+<div class="twelve columns">
+    <?=$word['emailused'][$idioma];?><br><br>
+    <a class="button" href="www.kinobs.com" onclick="window.history.go(-1); return false;"><?=$word['previous'][$idioma]?></a>
+    <a class="button" href="index.php?idioma=<?=$idioma?>"><?=$word['loginpage'][$idioma]?></a>
+	</div></div></div></body></html>
+ 	
+
+<? } else {
+
+include('header.php');
+include('data-europeu.php');
 $llista=$_POST[llista];
 $numeronens=$_POST[numeronens];
+
 ?>
-
-
 	<div class="bandresum">
 	<div class="container">
 		<div class="sixteen columns">
@@ -50,6 +79,12 @@ for ($n=1; $n<=$numeronens; $n++){?>
 			<input type="hidden" name="nom<?=$n?>" value="<?=$_POST['nom'.$n]?>">
 			<input type="hidden" name="cognoms<?=$n?>" value="<?=$_POST['cognoms'.$n]?>">
 			<input type="hidden" name="birthdate<?=$n?>" value="<?=$_POST['birthdate'.$n]?>">
+			
+			<!--<input type="hidden" name="fitxa<?=$n?>" value="<?=$_POST['fitxa'.$n]?>">-->
+			
+			<input type="hidden" name="fitxa<?=$n?>" value="<?=$_FILES['fitxa'.$n]['tmp_name']?>">
+			
+			<? if(is_uploaded_file($_FILES['fitxa'.$n]['tmp_name'])) { echo $word['pdfisthere'][$idioma];} else { echo $word['pdfisnotthere'][$idioma];} ?>
 			
 			
 			<?=$_POST['adreca'.$n]?><br>
@@ -102,6 +137,10 @@ for ($n=1; $n<=$numeronens; $n++){?>
 			<input type="hidden" name="patologies2<?=$n?>" value="<?=$_POST['patologies2'.$n]?>">
 			<strong><?=$word['fmedica'][$idioma]?>:</strong> <?=$_POST['autoritzaciomedica'.$n]?><br>
 			<input type="hidden" name="autoritzaciomedica<?=$n?>" value="<?=$_POST['autoritzaciomedica'.$n]?>">
+			
+			<strong><?=$word['fmedica'][$idioma]?>:</strong> <?=$_POST['autoritzaciomedicab'.$n]?><br>
+			<input type="hidden" name="autoritzaciomedicab<?=$n?>" value="<?=$_POST['autoritzaciomedicab'.$n]?>">
+			
 	
 		</div><!--end four-->		
 </div><!--end ten columns-->
@@ -172,7 +211,8 @@ foreach ($llista as $value) { $coses=explode('/',$value); $nom=$coses[0]; $naixa
 	
 	<a class="button" href="www.kinobs.com" onclick="window.history.go(-1); return false;"><?=$word['previous'][$idioma]?></a>
 	<input type="submit" name="submit" value="<?=$word['finalitzar'][$idioma]?>"/>
+	<p class="final"><span>*</span><?=$word['textpropera'][$idioma]?></p>
 	</form>
 </div>
 </div><!--end container-->
-
+<? } //end if email?>

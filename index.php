@@ -21,12 +21,11 @@ include('header.php');?>
 			<input type="hidden" name="idioma" value="<?=$idioma?>">
 			<input type="hidden" name="numeronens" value="<?=$numeronens?>">
 			
-			<div>
-			
-			<div style="display: inline-block;"><input type="text" placeholder="<?=$word['pnom'][$idioma]?> <?=$i?>" name="fill<?=$i?>" value="" class="form-control" required/></div>
-			
-			<div style="display: inline-block;"> 
-              <select style="width: 80px;" name="dia<?=$i?>" data-trigger="change" required>
+			<table class="nomiedat">
+				<tr>
+				<td><input type="text" placeholder="<?=$word['pnom'][$idioma]?> <?=$i?>" name="fill<?=$i?>" value="" class="form-control" required/></td>
+				
+				<td><select style="width: 80px;" name="dia<?=$i?>" data-trigger="change" required>
 	              <option value=""><?=$word['day'][$idioma]?></option>
 	              <option value="01">01</option>
 	              <option value="02">02</option>
@@ -60,10 +59,10 @@ include('header.php');?>
 	              <option value="30">30</option> 
 	              <option value="31">31</option>       
               </select>
-             </div>
+             </td>
              
              
-             <div style="display: inline-block;"> 
+             <td> 
                 <select style="width: 80px;" name="mes<?=$i?>" required>
                	  <option value="">Mes</option>
 	              <option value="01">Gener</option>
@@ -79,11 +78,11 @@ include('header.php');?>
 	              <option value="11">Novembre</option>
 	              <option value="12">Desembre</option>      
               </select>
-              </div>
+              </td>
 
               
               
-              <div style="display: inline-block;"> 
+              <td> 
               <select style="width: 80px;" name="any<?=$i?>" required>
               
 	              <option value=""><?=$word['year'][$idioma]?></option>
@@ -92,12 +91,12 @@ include('header.php');?>
 	              <? } ?>
 	        
               </select>
-              </div>
+              </td>
               
               
               
               
-			</div>
+			</table>
 
 		
 			

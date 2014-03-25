@@ -71,6 +71,7 @@ body{}
 div.bandform{ padding-top: 30px;}
 .bandkinobs{  background-color: $redkinobs;}
 .bandheader{ border-bottom: 1px solid $gris; padding: 15px 0px;}
+.bandalert{ margin: 50px 0px; }
 .bandresum{ background-color: $blanc; padding: 15px 0px; margin-bottom: 30px;  border-bottom: 1px solid $gris; background-color: $grisclar;}
 .bandformnen{ border-bottom: 1px solid $gris; padding: 25px 0px;}
 .bandformtutor{ background-color: $redsuau; border-bottom: 1px solid $gris; padding: 20px 0px;}
@@ -94,11 +95,11 @@ table#taularesum{ tfoot{ text-align: right; font-size: 2em;}}
 .infomodul{ margin-top: 15px; float: left; p{ font-size: 1.2em;} }
 
 ul.volsinscriure{
-	li{ background-color: $blaupastel; display: inline-block; @include rounded; width: 100px; height: 80px; text-align: center; padding: 40px 10px 10px 10px; margin-right: 7px;
+	li{ border: 5px solid red; @include boxshadow-soft; background-color: $blanc; display: inline-block; @include rounded; width: 100px; height: 80px; text-align: center; padding: 40px 10px 10px 10px; margin-right: 7px;
 		
-		span.nom{ font-size: 1.5em; font-weight: bold; color: $blanc;}
-		span.edat{ color: $blanc;}
-		em{ color: $blanc;}
+		span.nom{ font-size: 1.5em; font-weight: bold; color: $redkinobs;}
+		span.edat{ color: $griskinobs;}
+		em{ color: $griskinobs;}
 		
 	}
 	
@@ -115,6 +116,11 @@ a.three2{ span{ color: green;}}
 a.three3{ span{ color: blue;}}
 
 a.red{ color: red;}
+
+table.nomiedat{td{padding: 0px 5px; vertical-align: middle;}}
+
+p.apartir{ font-size: 1em; font-style: italic; span{ font-size: 1.5em; color: $blaukinobs;}}
+
 
 /* #Buttons
 ================================================== */
@@ -135,7 +141,7 @@ a.red{ color: red;}
 	  border-radius: 3px;
 	  color: #444;
 	  display: inline-block;
-	  font-size: 11px;
+	  font-size: 15px;
 	  font-weight: bold;
 	  text-decoration: none;
 	  text-shadow: 0 1px rgba(255, 255, 255, .75);

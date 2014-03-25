@@ -40,15 +40,15 @@ $word['fantitetanica']=array('ca'=>'Antitetànica', 'es'=>'Antitetánica');
 $word['fnomantitetanica']=array('ca'=>'Observacions antitetància', 'es'=>'Observaciones antitetánica');
 $word['falergia']=array('ca'=>'Al·lèrgies', 'es'=>'Alergias');
 $word['fnomalergia']=array('ca'=>'Nom al·lèrgies', 'es'=>'Nombre alergias');
-$word['fcroniques']=array('ca'=>'Enfermetats cròniques', 'es'=>'Enfermedades crónicas');
-$word['fnomcroniques']=array('ca'=>'Nom de les enfermetats cròniques', 'es'=>'Nombre de las enfermedades crónicas');
+$word['fcroniques']=array('ca'=>'Malaltíes cròniques', 'es'=>'Enfermedades crónicas');
+$word['fnomcroniques']=array('ca'=>'Nom de les malaltíes cròniques', 'es'=>'Nombre de las enfermedades crónicas');
 
 $word['fintervingut']=array('ca'=>'Intervencions quirúrguiques', 'es'=>'Intervenciones quirúrgicas');
 $word['fnomintervingut']=array('ca'=>'Nom de les intervencions', 'es'=>'Nombre de las intervenciones');
 $word['fdiscapacitat']=array('ca'=>'Discapacitats', 'es'=>'Discapacidades');
-$word['fnomdiscapacitat']=array('ca'=>'Nom de les discapacitats', 'es'=>'Nombre de las discapacidades');
-$word['fcaracter']=array('ca'=>'Descripció del caràcter', 'es'=>'Descripción del carácter');
-$word['fpatologies']=array('ca'=>'Patologíes', 'es'=>'Patologías');
+$word['fnomdiscapacitat']=array('ca'=>'Tipus i grau de la discapacitat', 'es'=>'Tipo y grado de la discapacidad');
+$word['fcaracter']=array('ca'=>'Breu descripció del caràcter', 'es'=>'Breve descripción del carácter');
+$word['fpatologies']=array('ca'=>'Pateix frequentment de', 'es'=>'Sufre frecuentemente de');
 $word['fpatologies2']=array('ca'=>'Altres patologíes', 'es'=>'Otras patologías');
 
 $word['fmedica']=array('ca'=>'Autorització mèdica', 'es'=>'Autorización médica');
@@ -56,7 +56,7 @@ $word['dadestutor']=array('ca'=>'Dades del Pare/Mare/tutora o tutor legal', 'es'
 $word['pnom']=array('ca'=>'Nom', 'es'=>'Nombre');
 $word['pcognoms']=array('ca'=>'Cognoms', 'es'=>'Apellidos');
 $word['tel1']=array('ca'=>'Telèfon 1', 'es'=>'Teléfono 1');
-$word['tel2']=array('ca'=>'Teléfono 2', 'es'=>'Teléfono 2');
+$word['tel2']=array('ca'=>'Telèfon 2', 'es'=>'Teléfono 2');
 $word['tel3']=array('ca'=>'Teléfono 3', 'es'=>'Teléfono 3');
 
 $word['email']=array('ca'=>'Email', 'es'=>'Email');
@@ -84,6 +84,19 @@ $word['years']=array('ca'=>'anys', 'es'=>'años');
 $word['fitxamedica']=array('ca'=>'Fitxa mèdica', 'es'=>'Ficha médica');
 $word['nomdeltutor']=array('ca'=>'Nom del pare/mare/tutor legal', 'es'=>'Nombre del padre/madre/tutor legal');
 $word['finalitzar']=array('ca'=>'Finalitzar', 'es'=>'Finalizar');
+$word['attachfile']=array('ca'=>'Adjunta la fitxa mèdica en format pdf', 'es'=>'Adjunta la ficha médica en formato pdf');
+$word['pdfisthere']=array('ca'=>'Arxiu .PDF de la fitxa mèdica està pujat<br>', 'es'=>'Archivo .PDF de la ficha médica está subido<br>');
+$word['pdfisnotthere']=array('ca'=>'Arxiu .PDF de la fitxa mèdica no està pujat<br>', 'es'=>'Archivo .PDF de la ficha médica no está subido<br>');
+
+$word['apartir']=array('ca'=>'A partir de nens de', 'es'=>'A partir de niños de');
+$word['textpropera']=array('ca'=>'El proper cop que vulgui inscriure els seus fills a noves activitats, podrà fer-ho directament a través del panell de control, dades del qual rebrà per correu quan finalitzi aquesta preinscripció', 'es'=>'La próxima vez que quiera inscribir sus hijos a nuevas actividades, podrá hacerlo directamente desde su panel de contro, cuyos datos recibirá por correo cuando finalice esta preinscripción.');
+$word['emailused']=array('ca'=>'No s\'ha pogut procedir ja que el teu email ja està inscrit a la nostra base de dades. Això vol dir que ja ets usuari registrat o que algú està utilitzant el teu correu. Si ja havies utilitzat el nostre sistema anteriorment, recorda que ets un usuari registrat.', 'es'=>'No se ha podido proceder ya que tu email ya está inscrito a nuestra base de datos. Esto significa que ya eres un usuario registrado o que alguien está utilizando tu dirección de correo. Si ya habías utilizado nuestro sistema anteriormente, recuerda que ya eres un usuario registrado. ');
+$word['titleemailused']=array('ca'=>'Kinobs · El teu email está en ús', 'es'=>'Kinobs · Tu email ya está en uso');
+$word['loginpage']=array('ca'=>'Pàgina de login d\'usuaris', 'es'=>'Página de login de usuarios');
+$word['']=array('ca'=>'', 'es'=>'');
+$word['']=array('ca'=>'', 'es'=>'');
+$word['']=array('ca'=>'', 'es'=>'');
+$word['']=array('ca'=>'', 'es'=>'');
 $word['']=array('ca'=>'', 'es'=>'');
 $word['']=array('ca'=>'', 'es'=>'');
 $word['']=array('ca'=>'', 'es'=>'');
