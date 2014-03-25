@@ -567,6 +567,6 @@ $this->allowedCSStags .= '|TEXTCIRCLE|DOTTAB';	// mPDF 5.5.23	// mPDF 5.6.33
 $this->outerblocktags = array('DIV','FORM','CENTER','DL','FIELDSET','ARTICLE','ASIDE','FIGURE','FIGCAPTION', 'FOOTER','HEADER','HGROUP','NAV','SECTION','DETAILS','SUMMARY');	// mPDF 5.5.09 // mPDF 5.5.22
 $this->innerblocktags = array('P','BLOCKQUOTE','ADDRESS','PRE','H1','H2','H3','H4','H5','H6','DT','DD','CAPTION');
 
-
-
+//$config['../pdf/']=$_SERVER['DOCUMENT_ROOT']."my_project/file/";
+//$this->mpdf->Output($this->config->item('../pdf/')."invoice/arif.pdf",'F');
 ?>

@@ -132,10 +132,16 @@ include("PdfBody.php");
 //Funció que converteix
 include("mpdf/mpdf.php");
 
+
 $mpdf=new mPDF(); 
 $mpdf->WriteHTML($html);
-$mpdf->Output();
+$mpdf->Output("pdf/$idcomanda.pdf","F");
+
+echo 'Missatge final';
+
 exit;
+
+
 
 //==============================================================
 //==============================================================

@@ -293,7 +293,7 @@ $(document).ready( function() {
 		<div class="one-third column">
 	
 	
-			<label for="nom"><?=$word['dadestutor'][$idioma]?></label>
+			<label for="nom"><?=$word['pnom'][$idioma]?></label>
 			<input type="text" name="nomtutor" value="" required>
 			
 			<label for="cognoms"><?=$word['pcognoms'][$idioma]?></label>
