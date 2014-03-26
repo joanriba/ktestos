@@ -595,6 +595,16 @@ p.apartir {
     font-size: 1.5em;
     color: #3389d7; }
 
+a.newcommand {
+  border: 1px solid #236fb4;
+  padding: 15px 20px;
+  background-color: #3389d7;
+  color: white;
+  text-decoration: none; }
+  a.newcommand:hover {
+    border: 1px solid #236fb4;
+    background-color: #4895db; }
+
 /* #Buttons
 ================================================== */
 a.submit {

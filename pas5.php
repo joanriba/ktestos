@@ -59,6 +59,7 @@ $idpare= mysql_insert_id();
 mysql_query("INSERT INTO comandes (fecha, idpare) values (NOW(),'$idpare')",$cxn);
 
 $idcomanda=mysql_insert_id();
+$myDate = date('Y/m/d');
 
 
 //Generem un password pel pare
@@ -113,10 +114,10 @@ if($nomar==$nom and $naixament==$birthdate) { $idmodulbo=$idmodul;
 include('admin/MailFunctions.php');
 
 //correu al pare
-//traspas_correcte($_POST[email1], $_POST[nomtutor],$pass2, $idioma);
+traspas_correcte($_POST[email1], $_POST[nomtutor],$pass2, $idioma);
 
 //correu a kinobs
-//noumembre($_POST[email1], $_POST[nomtutor], $_POST[cognomstutor], $_POST[tel1], $_POST[tel2], $idpare, $idioma);
+noumembre($_POST[email1], $_POST[nomtutor], $_POST[cognomstutor], $_POST[tel1], $_POST[tel2], $idpare, $idcomanda, $idioma);
 
 
 include('data-europeu.php'); 
@@ -132,21 +133,77 @@ include("PdfBody.php");
 //Funció que converteix
 include("mpdf/mpdf.php");
 
-
 $mpdf=new mPDF(); 
 $mpdf->WriteHTML($html);
 $mpdf->Output("pdf/$idcomanda.pdf","F");
-
-echo 'Missatge final';
-
-exit;
-
-
-
-//==============================================================
 //==============================================================
 //==============================================================
 
-} //tanca if email is not in use
 
+//==============================================================
+//ARRANQUEM PHPMAILER PER ENVIAR L'ARXIU ADJUNT
+
+$email=$_POST[email1];
+require("class.phpmailer.php");
+
+$mail = new PHPMailer();
+
+$mail->CharSet = 'UTF-8';
+$mail->IsSMTP();  // telling the class to use SMTP
+$mail->Host     = "mail.joanriba.net"; // SMTP server
+
+$mail->From     = "no-reply@kinobs.com";
+$mail->FromName = 'Kinobs';
+$mail->AddAddress($email);
+
+$mail->IsHTML(true);
+
+$mail->AddEmbeddedImage('logo-kinobs.png', 'logo-kinobs', 'logo-kinobs.png');
+$mail->Subject  = "Resguard de Preinscripció";
+$mail->Body     = 'Hola '.$_POST[nomtutor].', <br> T\'adjuntem el teu resguard de preinscripció<br>Recorda que tens 10 díes hàbils per entregar-lo a Kinobs per així formalitzar el pagament i la inscripció final. Gràcies de nou per la teva atenció.<br> Cordialment,<br> Equip de Kinobs<br><img src="cid:logo-kinobs" />';
+$mail->AltBody="Hola ".$_POST[nomtutor].", \n\n T\'adjuntem el teu resguard de preinscripció \n\n Recorda que tens 10 díes hàbils per entregar-lo a Kinobs per així formalitzar el pagament i la inscripció final. Gràcies de nou per la teva atenció. \n\n Cordialment, \n\n Equip de Kinobs.";
+$mail->WordWrap = 50;
+
+
+$path='pdf/'.$idcomanda.'.pdf';
+
+$mail->AddAttachment($path);
+
+if(!$mail->Send()) {
+  echo 'Message was not sent.';
+  echo 'Mailer error: ' . $mail->ErrorInfo;
+} else {
+  //echo 'Message has been sent.';
+}
+
+//==============================================================
+
+
+
+
+
+
+//MOSTREM PÀGINA D'EXIT
 ?>
+
+
+ 	<html lang="<?=$idioma?>"><head>
+	<meta charset="utf-8">
+	<title><?=$word['success'][$idioma]?></title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="css/base.css"><link rel="stylesheet" href="css/skeleton.css"><link rel="stylesheet" href="css/layout.css"></head><body>
+	<div class="bandkinobs"><img src="/img/logo-kinobs.png"></div>
+	<div class="bandalert"><div class="container">
+<div class="four columns"><img src="/img/okbig.png"></div>
+<div class="twelve columns">
+    <p><?=$word['success2'][$idioma];?><p>
+    <a class="button" href="download.php?idcomanda=<?=$idcomanda?>"><?=$word['downloadpdf'][$idioma]?></a>
+    <a class="button" href="pdf/<?=$idcomanda?>.pdf" target="_blank"><?=$word['openpdf'][$idioma]?></a>
+    <a class="button" href="http://www.kinobs.com" target="_blank"><?=$word['backtohome'][$idioma]?></a>
+	</div></div></div></body></html>
+
+
+
+
+<? } //tanca if email is not in use ?>

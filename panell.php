@@ -36,8 +36,7 @@ include('header.php');
 		<div class="one-third column">	
 				
 			<a href="dades-editar.php?id=<?=$_SESSION[s_iduser]?>&idioma=<?=$idioma?>" class="button">Editar dades</a><br>
-			<a href="changepassword.php?id=<?=$_SESSION[s_iduser]?>&idioma=<?=$idioma?>" class="button">Canviar contrasenya</a>
-			
+			<a href="changepassword.php?id=<?=$_SESSION[s_iduser]?>&idioma=<?=$idioma?>" class="button">Canviar contrasenya</a>	
 			
 		</div><!--one-third-->
 		
@@ -90,7 +89,11 @@ include('header.php');
 							<td><?=$inici?></td>
 							<td><?=$final?></td>
 							<td><?=$row[preu]?></td>
-							<td><?=$row[status]?></td>
+							<td>
+								<? if($row[status]=='preinscrit'){?><span style="color: red;"><?=$word['preinscrit'][$idioma]?></span><? } ?>
+							
+							
+							</td>
 							<td><?=$row[categoria]?></td>
 						</tr>
 					
@@ -100,6 +103,18 @@ include('header.php');
 					
 				</table>
 				
+			
+				
+				
+		</div><!--end sixteen-->
+	</div><!--end container-->
+</div><!--end band-->
+
+
+<div class="bandformtutor">
+	<div class="container">
+		<div class="sixteen columns">
+			<a class="newcommand" href="new.php?idioma=<?=$idioma?>"><?=$word['newcommand'][$idioma]?></a>	
 		</div><!--end sixteen-->
 	</div><!--end container-->
 </div><!--end band-->

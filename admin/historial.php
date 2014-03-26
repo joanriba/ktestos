@@ -5,15 +5,8 @@ include('menu.php');
 ?>
 
 <div class="bandcontent-admin">
-	<div class="container">
-		<div class="sixteen columns">
-			<!--imprimim el títol segons la categoria-->
-
-
-
-<div class="bandformnen">
-	<div class="container">
-		<div class="sixteen columns">
+	
+	
 
 
 <? 
@@ -115,6 +108,6 @@ $consulta=mysql_query("select historial.id,historial.idmodul, nens.id as idnen,n
 					
 				</table>
 				
-		</div><!--end sixteen-->
-	</div><!--end container-->
+		
+	
 </div><!--end band-->

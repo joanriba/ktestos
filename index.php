@@ -91,24 +91,16 @@ include('header.php');?>
 	              <? } ?>
 	        
               </select>
-              </td>
-              
-              
-              
-              
+              </td> 
 			</table>
 
 		
-			
-			
-			
-			
-			<? } //tanca for ?>
+		<? } //tanca for ?>
 	
 				
 				<input type="hidden" name="idioma" value="<?=$idioma?>"/>
-				<a href="index.php" class="submit"><?=$word['previous'][$idioma]?></a>
-				<input type="submit" name="submit2" value="<?=$word['next'][$idioma]?>"/>
+				<a href="index.php?numeronens=<?=$numeronens?>" class="submit"><?=$word['previous'][$idioma]?></a>
+				<input type="submit" name="submit" value="<?=$word['next'][$idioma]?>"/>
 			
 			</form>
 			
@@ -129,12 +121,12 @@ include('header.php');?>
  
  <div class="seven columns">
  
-      <form class="inscripcio" method="post" action="?" enctype="multipart/form-data">
+      <form class="inscripcio" method="post" action="?" enctype="multipart/form-data" data-parsley-validate>
 		
 		<h3><?=$word['howmanykids'][$idioma]?></h3>
 		
 			
-			<input type="number" name="numeronens" value="<? if(isset($_GET[numeronens])){ echo $_GET[numeronens];}?>">
+			<input type="number" name="numeronens" value="<? if(isset($_GET[numeronens])){ echo $_GET[numeronens];}?>" required/>
 			              
  
             <input type="hidden" name="idioma" value="<?=$idioma?>"/>

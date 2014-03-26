@@ -63,16 +63,16 @@ $naixament=$coses[1];
 			<!--end invisibles-->
 			
 			<label for="cognoms">Cognoms</label>
-			<input type="text" name="cognoms<?=$n?>" value="" required>
+			<input type="text" name="cognoms<?=$n?>" value="" data-parsley-minlength="9" required>
 									
 			<label for="adreca">Adreça</label>			
-			<input type="text" name="adreca<?=$n?>" value="" required>
+			<input type="text" name="adreca<?=$n?>" value="" data-parsley-minlength="5" required>
 			
 			<label for="poblacio">Població</label>			
-			<input type="text" name="poblacio<?=$n?>" value="" required>
+			<input type="text" name="poblacio<?=$n?>" value="" data-parsley-minlength="5" required>
 			
 			<label for="cp">Codi Postal</label>			
-			<input type="text" name="cp<?=$n?>" value="">
+			<input type="text"  length="5"  name="cp<?=$n?>" value="" data-parsley-length="[5, 5]"  required>
 			
 			<label for="cursacabat">Curs acabat</label>			
 			<input type="text" name="cursacabat<?=$n?>" value="" required>
@@ -100,8 +100,7 @@ $naixament=$coses[1];
 			
 				<textarea style="display: none;" id="nomantitetanica<?=$n?>" name="nomantitetanica<?=$n?>" placeholder="<?=$word['fnomantitetanica'][$idioma]?>"></textarea>
 
-						
-								
+												
 						
 			<!--select Alèrgia-->
 			<label for="alergia"><?=$word['falergia'][$idioma]?></label>
@@ -114,8 +113,6 @@ $naixament=$coses[1];
 			
 				<textarea style="display: none;" id="nomalergia<?=$n?>" name="nomalergia<?=$n?>" placeholder="<?=$word['fnomalergia'][$idioma]?>"></textarea>
 						
-
-			
 			
 			<!--select Enfermetats cròniques-->
 			<label for="croniques"><?=$word['fcroniques'][$idioma]?></label>
@@ -153,9 +150,7 @@ $(document).ready( function() {
 $('#intervingut<?=$n?>').bind('change', function (e) { 
     if( $('#intervingut<?=$n?>').val() == 'si') {
       $('#nomintervingut<?=$n?>').show();
-    }
-    else{
-      $('#nomintervingut<?=$n?>').hide();
+    }else{$('#nomintervingut<?=$n?>').hide();
     }         
   });
 
@@ -174,10 +169,7 @@ $('#antitetanica<?=$n?>').bind('change', function (e) {
 $('#alergia<?=$n?>').bind('change', function (e) { 
     if( $('#alergia<?=$n?>').val() == 'si') {
       $('#nomalergia<?=$n?>').show();
-    }
-    else{
-      $('#nomalergia<?=$n?>').hide();
-    }         
+    }else{$('#nomalergia<?=$n?>').hide();}         
   });
 
 
@@ -186,9 +178,7 @@ $('#alergia<?=$n?>').bind('change', function (e) {
   $('#croniques<?=$n?>').bind('change', function (e) { 
     if( $('#croniques<?=$n?>').val() == 'si') {
       $('#nomcroniques<?=$n?>').show();
-    }
-    else{
-      $('#nomcronicques<?=$n?>').hide();
+    }else{$('#nomcronicques<?=$n?>').hide();
     }         
   });
   
@@ -196,19 +186,14 @@ $('#alergia<?=$n?>').bind('change', function (e) {
 });
 </script>
 
-						
-	
-			
-		
 		
 		
 		</div><!--end four columns-->
+	
+	
 		
 		<div class="four columns">
 		
-					
-			
-			
 			
 			<!--select Discapacitat-->
 			<label for="discapacitat"><?=$word['fdiscapacitat'][$idioma]?></label>
@@ -297,15 +282,15 @@ $(document).ready( function() {
 			<input type="text" name="nomtutor" value="" required>
 			
 			<label for="cognoms"><?=$word['pcognoms'][$idioma]?></label>
-			<input type="text" name="cognomstutor" value="" required>
+			<input type="text" name="cognomstutor" value="" data-parsley-minlength="9" required>
 			
 
 						
 			<label for="tel1"><?=$word['tel1'][$idioma]?></label>			
-			<input type="text" name="tel1" value="" required>
+			<input type="text" name="tel1" value="" data-parsley-length="[9, 12]" required>
 			
 			<label for="tel2"><?=$word['tel2'][$idioma]?></label>			
-			<input type="text" name="tel2" value="">
+			<input type="text" maxlength="9" name="tel2" value="">
 
 			
 		
@@ -319,10 +304,10 @@ $(document).ready( function() {
 			<input type="text" name="tel3" value="">			
 			
 			<label for="email1"><?=$word['email'][$idioma]?></label>			
-			<input type="text" name="email1" value="" required>
+			<input type="email" id="email1" name="email1" value="" data-parsley-trigger="change" required>
 			
 			<label for="email2"><?=$word['repeatemail'][$idioma]?></label>			
-			<input type="text" name="email2" value="">
+			<input type="email" name="email2" value="" data-parsley-equalto="#email1" required>
 			
 			
 
@@ -333,7 +318,7 @@ $(document).ready( function() {
 			
 			
 			<label for="dni"><?=$word['dni'][$idioma]?></label>			
-			<input type="text" name="dni" value="" required>
+			<input type="text" name="dni" value="" data-parsley-minlength="8" required>
 
 			
 			<label for="fammono"><?=$word['carnetmonoparental'][$idioma]?></label>			

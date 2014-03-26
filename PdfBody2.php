@@ -46,41 +46,7 @@
 </div><!--end bandheader-->
 
 
-
-
-<div class="bandformtutor">
-	<div class="container">
-	<div class="sixteen columns">
-	
-	<h2>'.$word['dadestutor'][$idioma].'</h2>
-	</div><!--end sixteen-->
-	
-		<div class="one-third column">
-	
-	
-			'.ucfirst($_POST[nomtutor]).'&nbsp;'.$_POST[cognomstutor].'<br>
-			'.$word['tel1'][$idioma].': '.$_POST[tel1].'<br>
-			'.$word['tel2'][$idioma].': '.$_POST[tel2].'<br>
-			'.$word['tel3'][$idioma].': '.$_POST[tel3].'<br>	
-			
-		</div><!--tanca primer one-third-->
-		
-		<div class="one-third column">			
-			'.$word['email'][$idioma].': '.$_POST[email1].'<br>
-			'.$word['dni'][$idioma].': '.$_POST[dni].'<br>
-			'.$word['carnetmonoparental'][$idioma].': '.$_POST[fammono].'<br>
-			'.$word['carnetnombrosa'][$idioma].': '.$_POST[famnum].'<br>
-			
-		</div><!--one-third-->
-		
-		<div class="one-third column">
-			<!--aquí estaven les dades bancaries que hem decidit no posar-->    
-		</div><!--one-third column-->
-	</div><!--end container-->
-</div><!--end bandform tutors-->
-
-
-	<div class="bandresum">
+<div class="bandresum">
 	<div class="container">
 	
 		<div class="sixteen columns">
@@ -102,15 +68,14 @@
 //FOREACH de les dades del formulari anterior per fer el resum
 
 $table = "";
-foreach($llista as $value){
+
+foreach ($llista as $value) {
+$coses=explode('/',$value);
+$id=$coses[0];
+$idmodul=$coses[1];
+$nom=$coses[2];
 	
-	$coses = explode("/", $value);
-	$nom=$coses[0];
-	$naixament=$coses[1];
-	$idmodul=$coses[2];
-	$llista_reduida[]=$nom.'/'.$naixament;
-	
-	$moduls = mysql_query("select moduls.dinici,moduls.dfinal,moduls.edat,moduls.preu,moduls.maximnens, moduls.id as idmodul, activitats.id, activitats.nomca as nomactivitatca, activitats.nomes as nomactivitates from moduls inner join activitats on activitats.id=moduls.idactivitat where moduls.id=$idmodul",$cxn);
+$moduls = mysql_query("select moduls.dinici,moduls.dfinal,moduls.edat,moduls.preu,moduls.maximnens, moduls.id as idmodul, activitats.id, activitats.nomca as nomactivitatca, activitats.nomes as nomactivitates from moduls inner join activitats on activitats.id=moduls.idactivitat where moduls.id=$idmodul",$cxn);
 	
 	while($row=mysql_fetch_array($moduls)){ 
 
@@ -157,54 +122,9 @@ $html .='
 
 	</div><!--end sixteen-->
 	</div><!--end container-->
-	</div><!--end bandresum-->';
-
-//FOR PER LOOPEJAR ELS NENS
-
-
-
-for ($n=1; $n<=intval($numeronens); $n++){
-	
-$html .='
-<div class="bandformnen">
-<div class="container">
-<div class="sixteen columns">
-
-
-<h2>'.$_POST["nom".$n].'&nbsp;'.$_POST["cognoms".$n].'</h2>
-
-
-</div>
-
-<div class="five columns">
-			
-			<strong>Direcció</strong>: '.$_POST["adreca".$n].'<br>
-			'.$_POST["poblacio".$n].'<br>
-			'.$_POST["cp".$n].'<br>
-			<strong>Curs acabat:</strong> '.$_POST["cursacabat".$n].'<br>			
-			<strong>Última escola on s\'ha estudiat:</strong> '.$_POST["escolaultim".$n].'<br>
-			<strong>Autorització mèdica:</strong> '.$_POST["autoritzaciomedica".$n].'<br>
-
-</div>
-
-<div class="ten columns">
-			<div class="four columns">			
-			<strong>Antitetànica:</strong> '.$_POST["antitetanica".$n].'<br>		
-			<strong>Alèrgia:</strong> '.$_POST["alergia".$n].'<br>
-			<strong>Enfermetats cròniques:</strong> '.$_POST["croniques".$n].'<br>
-			<strong>Intervingut:</strong> '.$_POST["intervingut".$n].'<br>
-		</div><!--end four columns-->
-				
-</div><!--end ten columns-->
-</div><!--end container-->
-</div><!-- end bandform-->';
-
-
-} //tanca FOR DE NANUS
-
+	</div><!--end bandresum-->
 
 	
-$html .= '	
 </div>
 </div>';
 

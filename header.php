@@ -39,8 +39,9 @@ include('textos.php');?>
 	
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	
-	<script src="js/parsley.min.js"></script>
+	<script src="js/parsley.js"></script>
 	<script src="js/i18n/es.js"></script>
+	
 	
 	<link rel="stylesheet" href="js/parsley.css">
 	<script type="text/javascript" src="js/jquery.tablesorter.js"></script> 
@@ -70,7 +71,7 @@ include('textos.php');?>
 	<!-- Delete everything in this .container and get started on your own site! -->
 
 <div class="bandkinobs">
-	<img src="/img/logo-kinobs.png">
+	<a href="index.php?idioma=<?=$idioma?>"><img src="/img/logo-kinobs.png" alt="Logo kinobs"></a>
 </div>
 
 <div class="bandheader">

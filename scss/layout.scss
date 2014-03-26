@@ -122,6 +122,8 @@ table.nomiedat{td{padding: 0px 5px; vertical-align: middle;}}
 p.apartir{ font-size: 1em; font-style: italic; span{ font-size: 1.5em; color: $blaukinobs;}}
 
 
+a.newcommand{ border: 1px solid darken($blaukinobs,10%); padding: 15px 20px; background-color: $blaukinobs; color: $blanc; text-decoration: none; &:hover{ border: 1px solid darken($blaukinobs,10%); background-color: lighten($blaukinobs,5%);}}
+
 /* #Buttons
 ================================================== */
 

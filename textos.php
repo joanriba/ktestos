@@ -93,6 +93,15 @@ $word['textpropera']=array('ca'=>'El proper cop que vulgui inscriure els seus fi
 $word['emailused']=array('ca'=>'No s\'ha pogut procedir ja que el teu email ja està inscrit a la nostra base de dades. Això vol dir que ja ets usuari registrat o que algú està utilitzant el teu correu. Si ja havies utilitzat el nostre sistema anteriorment, recorda que ets un usuari registrat.', 'es'=>'No se ha podido proceder ya que tu email ya está inscrito a nuestra base de datos. Esto significa que ya eres un usuario registrado o que alguien está utilizando tu dirección de correo. Si ya habías utilizado nuestro sistema anteriormente, recuerda que ya eres un usuario registrado. ');
 $word['titleemailused']=array('ca'=>'Kinobs · El teu email está en ús', 'es'=>'Kinobs · Tu email ya está en uso');
 $word['loginpage']=array('ca'=>'Pàgina de login d\'usuaris', 'es'=>'Página de login de usuarios');
+$word['success']=array('ca'=>'Kinobs · Preinscripció realitzada amb èxit', 'es'=>'Kinobs · Preinscripción realizada con éxito');
+$word['success2']=array('ca'=>'La teva preinscripció s\'ha completat amb èxit. A continuació rebràs un correu de confirmació amb una còpia del resguard de pagament. Gràcies per la teva confiança. ', 'es'=>'Tu preinscripción se ha realizado con éxito. A continuación recibirás un correo de confirmación con una copia del resguardo. Gracias por tu confianza.');
+$word['downloadpdf']=array('ca'=>'Descarregar pdf', 'es'=>'Descargar pdf');
+$word['openpdf']=array('ca'=>'Obrir pdf', 'es'=>'Abrir pdf');
+$word['backtohome']=array('ca'=>'Tornar a la pàgina de Kinobs', 'es'=>'Volver a la página de Kinobs');
+$word['backtopanel']=array('ca'=>'Tornar al panell de control', 'es'=>'Volver al panel de control');
+$word['newcommand']=array('ca'=>'Iniciar una nova preinscripció', 'es'=>'Iniciar nueva inscripción');
+$word['preinscrit']=array('ca'=>'preinscrit', 'es'=>'preinscrito');
+$word['']=array('ca'=>'', 'es'=>'');
 $word['']=array('ca'=>'', 'es'=>'');
 $word['']=array('ca'=>'', 'es'=>'');
 $word['']=array('ca'=>'', 'es'=>'');
