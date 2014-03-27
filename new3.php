@@ -1,5 +1,5 @@
 <?php
-session_start();
+include('security.php');
 if(!isset($_GET['idioma'])){  
 	if(isset($_POST['idioma'])){ $idioma=$_POST['idioma']; } else { $idioma='ca';} 
 } else {$idioma=$_GET['idioma'];}

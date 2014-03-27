@@ -1,5 +1,4 @@
 <?php
-session_start();
 include('security.php');
 include('bdcon.php');
 //REBEM LES DADES ESTRUCTURALS

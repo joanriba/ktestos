@@ -217,4 +217,46 @@ case 6: $dialetra="Dissabte"; break;
 return $dialetra;
 }
 
+
+
+function FechaBreu_ca($publi){
+$ano = date('Y',$publi); //<-- Año
+$mes = date('m',$publi); //<-- número de mes (01-31)
+$dia = date('d',$publi); //<-- Día del mes (1-31)
+$dialetra = date('w',$publi);  //Día de la semana(0-7)
+switch($dialetra){
+case 0: $dialetra="Diumenge"; break;
+case 1: $dialetra="Dilluns"; break;
+case 2: $dialetra="Dimarts"; break;
+case 3: $dialetra="Dimecres"; break;
+case 4: $dialetra="Dijous"; break;
+case 5: $dialetra="Divendres"; break;
+case 6: $dialetra="Dissabte"; break;
+}
+switch($mes) {
+case '01': $mesletra="Gener"; break;
+case '02': $mesletra="Febrer"; break;
+case '03': $mesletra="Març"; break;
+case '04': $mesletra="Abril"; break;
+case '05': $mesletra="Maig"; break;
+case '06': $mesletra="Juny"; break;
+case '07': $mesletra="Juliol"; break;
+case '08': $mesletra="Agost"; break;
+case '09': $mesletra="Setembre"; break;
+case '10': $mesletra="Octubre"; break;
+case '11': $mesletra="Novembre"; break;
+case '12': $mesletra="Desembre"; break;
+}
+
+if($mesletra=='Agost' or $mesletra=='Octubre' or $mesletra=='Abril'){ return "$dialetra, $dia d' $mesletra"; } else {return "$dialetra, $dia de $mesletra";}
+}
+
+
+
+
+
+
+
+
+
 ?>

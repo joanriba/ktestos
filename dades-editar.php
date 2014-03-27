@@ -8,9 +8,6 @@ include('header.php');
 
 
 
-
-
-
 <div class="bandformtutor">
 	<div class="container">
 		<div class="sixteen columns">

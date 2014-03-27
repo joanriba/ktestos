@@ -11,7 +11,7 @@ $category=$_GET[category];
 			<!--imprimim el títol segons la categoria-->
 			<h1>Activitats</h1>
 			
-			<div class="new"><a class="submit" href="activitat_publicar.php">Crear nova activitat</a><br><br></div>
+			<div class="new"><a class="submit2" href="activitat_publicar.php">Crear nova activitat</a><br><br></div>
 		</div>
 		
 		
@@ -90,8 +90,8 @@ $avui=date('Y-m-d');
 						 ?>
 						
 						<a class="three1" href="historial.php?id=<?=$row[idmodul]?>">Preinscrits: <span><?=$preinscritsfinal?></span></a> &nbsp;&nbsp; 
-						<a class="three2" href="historial.php">Inscrits:  <span><?=$inscritsfinal?></span></a> &nbsp;&nbsp; 
-						<a class="three3" href="historial.php">Totals:  <span><?=$totalnens?></span></a>
+						<a class="three2" href="historial.php?id=<?=$row[idmodul]?>">Inscrits:  <span><?=$inscritsfinal?></span></a> &nbsp;&nbsp; 
+						<a class="three3" href="historial.php?id=<?=$row[idmodul]?>">Totals:  <span><?=$totalnens?></span></a>
 						
 						</p>
 						
@@ -109,7 +109,7 @@ $avui=date('Y-m-d');
 		
 		
 		<div class="sixteen columns">
-			<div class="new"><a class="submit" href="activitat_publicar.php">Crear nova activitat</a></div>
+			<div class="new"><a class="submit2" href="activitat_publicar.php">Crear nova activitat</a></div>
 		</div>
 		
 	

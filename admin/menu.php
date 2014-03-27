@@ -87,6 +87,7 @@ $id_admin= $_SESSION['s_id_admin'];
 				<li><a href="pares.php">Pares</a></li>
 				<li><a href="nens.php">Nens</a></li>
 				<li><a href="historial.php">Historial de Comandes</a></li>
+				<li><a href="comandes.php">Comandes</a></li>
 			</ul>
 		</div>
 		

@@ -1,5 +1,4 @@
 <?php
-session_start();
 include('security.php');
 $idioma=$_GET[idioma];
 if($idioma==""){ $idioma='ca';}

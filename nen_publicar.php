@@ -1,12 +1,10 @@
-<?php 
-
-ini_set( "memory_limit", "600M" );
-
-include('../bdcon.php');
+<?
 include('security.php');
-include('menu.php');
+$idioma=$_GET[idioma];
+if($idioma==""){ $idioma='ca';}
+include('bdcon.php');
+include('header.php');
 ?>
-
 
 <div class="bandcontent-admin">
 	<div class="container">
@@ -18,7 +16,7 @@ $id=$_GET[id];
 //PUBLICAR
 if (isset ($_POST['enviar'])) {
 mysql_query("INSERT INTO nens(idpare,nom,cognoms,birthdate,adreca,poblacio,cp,escolaultim,cursacabat,antitetanica,alergia,nomalergia,croniques,nomcroniques,intervingut,nomintervingut,discapacitat,nomdiscapacitat,caracter,patologies,patologies2,autoritzaciomedica,autoritzaciomedica2) VALUES('$_POST[idpare]','$_POST[nom]','$_POST[cognoms]','$_POST[birthdate]','$_POST[adreca]','$_POST[poblacio]','$_POST[cp]','$_POST[escolaultim]','$_POST[cursacabat]','$_POST[antitetanica]','$_POST[alergia]','$_POST[nomalergia]','$_POST[croniques]','$_POST[nomcroniques]','$_POST[intervingut]','$_POST[nomintervingut]','$_POST[discapacitat]','$_POST[nomdiscapacitat]','$_POST[caracter]','$_POST[patologies]','$_POST[patologies2]','$_POST[autoritzaciomedica]','$_POST[autoritzaciomedica2]')",$cxn);
-echo '<script>document.location = "nens.php"</script>'; 
+echo '<script>document.location = "panell.php?idioma='.$idioma.'"</script>'; 
 } ?>
 
 
@@ -26,7 +24,7 @@ echo '<script>document.location = "nens.php"</script>';
 //BORRAR
 if($_GET[borrar]=="yes") {
 $result = mysql_query("delete from nens where id='$id'",$cxn);
-echo '<script>document.location = "nens.php"</script>';
+echo '<script>document.location = "panell.php?idioma='.$idioma.'"</script>';
 } ?>
 
 
@@ -37,7 +35,7 @@ if (isset($_POST['reenviar'])) {
 $result = mysql_query("update nens set idpare='$_POST[idpare]',nom='$_POST[nom]', cognoms='$_POST[cognoms]', birthdate='$_POST[birthdate]', adreca='$_POST[adreca]', poblacio='$_POST[poblacio]', cp='$_POST[cp]', escolaultim='$_POST[escolaultim]', cursacabat='$_POST[cursacabat]', antitetanica='$_POST[antitetanica]', alergia='$_POST[alergia]', nomalergia='$_POST[nomalergia]', croniques='$_POST[croniques]', nomcroniques='$_POST[nomcroniques]', intervingut='$_POST[intervingut]', nomintervingut='$_POST[nomintervingut]', discapacitat='$_POST[discapacitat]', nomdiscapacitat='$_POST[nomdiscapacitat]', caracter='$_POST[caracter]', patologies='$_POST[patologies]', patologies2='$_POST[patologies2]', autoritzaciomedica='$_POST[autoritzaciomedica]',autoritzaciomedica2='$_POST[autoritzaciomedica2]' where id='$_POST[id]'", $cxn);
 
 //tornem enrere
-echo '<script>document.location = "nens.php"</script>';
+echo '<script>document.location = "panell.php?idioma='.$idioma.'"</script>';
 } ?>
 
 
@@ -46,7 +44,7 @@ echo '<script>document.location = "nens.php"</script>';
 $consulta=mysql_query("select * from nens where id=$id",$cxn);
 while($row=mysql_fetch_array($consulta)){ $idpare=$row[idpare];
 $nom=$row[nom];$cognoms=$row[cognoms];$birthdate=$row[birthdate];$adreca=$row[adreca];$poblacio=$row[poblacio];$cp=$row[cp]; $escolaultim=$row[escolaultim]; $cursacabat=$row[cursacabat];
-$antitetanica=$row[antitetanica];$alergia=$row[alergia]; $nomalergia=$row[nomalergia]; $croniques=$row[croniques]; $nomcroniques=$row[nomcroniques]; $intervingut=$row[intervingut]; $nomintervingut=$row[nomintervingut]; $discapacitat=$row[discapacitat]; $nomdiscapacitat=$row[nomdiscapacitat]; $caracter=$row[caracter]; $patologies=$row[patologies]; $patologies2=$row[patologies2]; $autoritzaciomedica=$row[autoritzaciomedica]; $autoritzaciomedica2=$row[autoritzaciomedica2];}
+$antitetanica=$row[antitetanica];$alergia=$row[alergia]; $nomalergia=$row[nomalergia]; $croniques=$row[croniques]; $nomcroniques=$row[nomcroniques]; $intervingut=$row[intervingut]; $nomintervingut=$row[nomintervingut]; $discapacitat=$row[discapacitat]; $nomdiscapacitat=$row[nomdiscapacitat]; $caracter=$row[caracter]; $patologies=$row[patologies]; $patologies2=$row[patologies2]; $autoritzaciomedica=$row[autoritzaciomedica];$autoritzaciomedica2=$row[autoritzaciomedica2];}
 ?>    
 
 
@@ -72,35 +70,16 @@ $antitetanica=$row[antitetanica];$alergia=$row[alergia]; $nomalergia=$row[nomale
 			<!-- la id en el cas de que estiguem editant-->
 			<input type="hidden" name="id" value="<?=$id?>">
 			
+			<input type="hidden" name="idpare" value="<?=$_SESSION['s_iduser']?>"
 			
-			
-			<label for="categoria">Selecciona el nom del tutor (camp obligatori)</label>
-			<select name="idpare">
-			
-			
-			<? if(isset($id)){ ?><option value="<?=$categoria?>">Actualment: <?=$nomcategoria?></option><? } ?>
-			
-			<? //LOOP DE CATEGORIES PEL SELECT
-			$consulta=mysql_query("select id,nom,cognoms from pares",$cxn);
-			while($row=mysql_fetch_array($consulta)){ ?>   
-			
-			<option value="<?=$row[id]?>"><?=$row[nom]?> <?=$row[cognoms]?></option>
-			
-			<? } ?>
-			
-			</select>
-			
-			
-			
-			
-			<label for="nom">Nom del nen</label>
+			<label for="nom">Nom</label>
 			<input type="text" name="nom" value="<? if(isset($id)){ echo $nom;}?>">
 			
 			<label for="cognoms">Cognoms</label>
 			<input type="text" name="cognoms" value="<? if(isset($id)){ echo $cognoms;}?>">
 						
-			<label for="birthdate">Data de naixament (Exemple: 2009-01-25)</label>			
-			<input type="text" name="birthdate" value="<? if(isset($id)){ echo $birthdate;}?>">
+			<label for="birthdate">Data de naixament (Exemple: 2010-01-25)</label>			
+			<input type="text" name="birthdate" placeholder="2010-01-25" value="<? if(isset($id)){ echo $birthdate;}?>">
 
 			<label for="adreca">Adreça</label>			
 			<input type="text" name="adreca" value="<? if(isset($id)){ echo $adreca;}?>">
@@ -218,12 +197,13 @@ $antitetanica=$row[antitetanica];$alergia=$row[alergia]; $nomalergia=$row[nomale
 						</select>
 						
 						
+					<!--select autorització mèdica-->
 			<label for="autoritzaciomedica2">Autorització mèdica 2</label>
 						<select name="autoritzaciomedica2">		
 							<? if(isset($id)){ ?><option value="<?=$autoritzaciomedica2?>">Actualment: <?=$autoritzaciomedica2?></option><? } ?>
 							<option value="si">Sí</option>
 							<option value="no">No</option>
-						</select>			
+						</select>
 											
 			
 			<input type="submit" value="<? if(isset($id)){ echo 'Guardar';} else {echo 'Publicar';}?>" name="<? if(isset($id)){ echo 'reenviar';} else {echo 'enviar';}?>"/>

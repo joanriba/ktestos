@@ -116,6 +116,7 @@ a.three2{ span{ color: green;}}
 a.three3{ span{ color: blue;}}
 
 a.red{ color: red;}
+a.green{ color: green;}
 
 table.nomiedat{td{padding: 0px 5px; vertical-align: middle;}}
 
@@ -124,8 +125,33 @@ p.apartir{ font-size: 1em; font-style: italic; span{ font-size: 1.5em; color: $b
 
 a.newcommand{ border: 1px solid darken($blaukinobs,10%); padding: 15px 20px; background-color: $blaukinobs; color: $blanc; text-decoration: none; &:hover{ border: 1px solid darken($blaukinobs,10%); background-color: lighten($blaukinobs,5%);}}
 
+table#taulahistorial{
+	tr.white{ background-color: white ; }
+	tr.blue{ background-color: #ebebeb ;}
+
+}
+
+div.nounen{ a{color: $blaukinobs;} background-color: lighten($blaukinobs,30%); padding: 10px 9px; margin: 20px 0px;}
+
 /* #Buttons
 ================================================== */
+
+	input[type="submit2"],a.submit2 {
+	width: auto !important;
+	text-decoration: none;
+	padding: 8px 15px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	line-height: 1;
+	color: $blanc;
+	border: none;
+	background-color: $blaukinobs;
+	
+		&:hover{ background-color: lighten($blaukinobs,7%);}
+	}
+
+
+
 
 	a.submit {
 		background: #eee; /* Old browsers */

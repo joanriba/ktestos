@@ -65,7 +65,7 @@ for ($n=1; $n<=$numeronens; $n++){?>
 </div>
 
 
-<form method="post" action="pas5.php">
+<form method="post" action="pas5.php" enctype="multipart/form-data">
 
 
 <div class="five columns">
@@ -105,7 +105,11 @@ for ($n=1; $n<=$numeronens; $n++){?>
 
 <div class="ten columns">
 			<h3><?=$word['fitxamedica'][$idioma]?></h3>
-			<div class="four columns">			
+			<div class="four columns">
+			
+			<label for="fitxa"><?=$word['attachfile'][$idioma]?></label>
+			<input type="file" name="fitxa<?=$n?>" id="fitxa<?=$n?>"><br><br>
+						
 			<strong><?=$word['fantitetanica'][$idioma]?>:</strong> <?=$_POST['antitetanica'.$n]?><br>
 			<input type="hidden" name="antitetanica<?=$n?>" value="<?=$_POST['antitetanica'.$n]?>">
 			<strong><?=$word['fnomantitetanica'][$idioma]?>:</strong> <?=$_POST['comentarisantitetanica'.$n]?><br>

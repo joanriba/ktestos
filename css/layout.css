@@ -219,6 +219,18 @@ th.headerSortUp {
       margin: 0;
       text-align: left;
       font-size: 70%; }
+  .bandcontent-admin input[type="submit2"], .bandcontent-admin a.submit2 {
+    width: auto !important;
+    text-decoration: none;
+    padding: 8px 15px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    line-height: 1;
+    color: white;
+    border: none;
+    background-color: #3389d7; }
+    .bandcontent-admin input[type="submit2"]:hover, .bandcontent-admin a.submit2:hover {
+      background-color: #519add; }
   .bandcontent-admin input[type="submit"], .bandcontent-admin a.submit {
     width: auto !important;
     text-decoration: none;
@@ -391,7 +403,7 @@ table.tablesorter {
   font-family: arial;
   background-color: #CDCDCD;
   margin: 10px 0pt 15px;
-  font-size: 8pt;
+  font-size: 10pt;
   width: 100%;
   text-align: left; }
 
@@ -420,7 +432,6 @@ th.header {
 table.tablesorter tbody td {
   color: #3D3D3D;
   padding: 4px;
-  background-color: #FFF;
   vertical-align: top; }
 
 table.tablesorter tbody tr.odd td {
@@ -584,6 +595,9 @@ a.three3 span {
 a.red {
   color: red; }
 
+a.green {
+  color: green; }
+
 table.nomiedat td {
   padding: 0px 5px;
   vertical-align: middle; }
@@ -605,8 +619,33 @@ a.newcommand {
     border: 1px solid #236fb4;
     background-color: #4895db; }
 
+table#taulahistorial tr.white {
+  background-color: white; }
+table#taulahistorial tr.blue {
+  background-color: #ebebeb; }
+
+div.nounen {
+  background-color: #b3d3f0;
+  padding: 10px 9px;
+  margin: 20px 0px; }
+  div.nounen a {
+    color: #3389d7; }
+
 /* #Buttons
 ================================================== */
+input[type="submit2"], a.submit2 {
+  width: auto !important;
+  text-decoration: none;
+  padding: 8px 15px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  line-height: 1;
+  color: white;
+  border: none;
+  background-color: #3389d7; }
+  input[type="submit2"]:hover, a.submit2:hover {
+    background-color: #519add; }
+
 a.submit {
   background: #eee;
   /* Old browsers */

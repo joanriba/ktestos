@@ -1,5 +1,5 @@
 <?
-session_start();
+include('security.php');
 $idioma=$_GET[idioma];
 if($idioma==""){ $idioma='ca';}
 include('data-europeu.php');
@@ -50,6 +50,51 @@ include('header.php');
 </div><!--end bandtutor-->
 
 
+
+
+<div class="bandformnen">
+	<div class="container">
+	<div class="siteen columns">
+			
+			<h2><?=$word['yourkids'][$idioma]?></h2>
+			
+		<? $nens=mysql_query("select * from nens where idpare='$_SESSION[s_iduser]'",$cxn);
+		while($row=mysql_fetch_array($nens)){?>
+			
+			<div class="one-third column">
+			
+			<h3><?=$row[nom]?> <?=$row[cognoms]?></h3>
+			
+			<?=$row[adreca]?><br>
+			<?=$row[poblacio]?>,<?=$row[cp]?><br><br>
+			
+			<?=$row[escolaultim]?>: <?=$row[cursacabat]?><br><br>
+			
+			<a class="submit2" href="nen_publicar.php?id=<?=$row[id]?>"><?=$word['editdata'][$idioma]?></a>
+			
+			</div>
+			
+			
+			
+		<? } ?>
+		
+		
+		</div><!--tanca sixteen-->
+		
+		<div class="sixteen columns nounen">
+			
+			<a href="nen_publicar.php">+ Afegir nou fill</a>
+		</div>
+	
+	</div>
+</div><!--tanca band-->
+
+
+
+
+
+
+
 <div class="bandformnen">
 	<div class="container">
 		<div class="sixteen columns">
@@ -60,6 +105,7 @@ include('header.php');
 
 		<table id="taulahistorial" class="tablesorter">
 					<thead>
+						<th>Id.Cmd</th>
 						<th>Fill</th>
 						<th>Pare/Tutor</th>
 						<th>Activitat</th>
@@ -73,16 +119,29 @@ include('header.php');
 					<tbody>
 					
 					
-								<? $consulta=mysql_query("select historial.id, nens.id as idnen,nens.nom as nomnen, pares.id as idpare, pares.nom as nompare, pares.cognoms as cognomspare, activitats.nomca as nomactivitat, moduls.dinici,moduls.dfinal,moduls.preu,historial.status,categories.nomca as categoria from historial inner join nens on historial.idnen=nens.id inner join pares on nens.idpare=pares.id inner join moduls on moduls.id=historial.idmodul inner join activitats on activitats.id=moduls.idactivitat inner join categories on categories.id=activitats.categoria",$cxn);
+								<? $consulta=mysql_query("select historial.id,historial.idcomanda, nens.id as idnen,nens.nom as nomnen, pares.id as idpare, pares.nom as nompare, pares.cognoms as cognomspare, activitats.nomca as nomactivitat, moduls.dinici,moduls.dfinal,moduls.preu,historial.status,categories.nomca as categoria from historial inner join nens on historial.idnen=nens.id inner join pares on nens.idpare=pares.id inner join moduls on moduls.id=historial.idmodul inner join activitats on activitats.id=moduls.idactivitat inner join categories on categories.id=activitats.categoria",$cxn);
+			
+			
+			$color = true;
+			$previous = '';
 			while($row=mysql_fetch_array($consulta)){ 
 				
 			
 				$inici= FechaFormateada_ca(strtotime($row[dinici]));
 				$final= FechaFormateada_ca(strtotime($row[dfinal]));
 				
+				if ( $row['idcomanda'] != $previous) {
+		 					$color = !$color;
+		 					$previous = $row['idcomanda'];
+		 				
+		 				} 	
+		 					$class = ($color)? 'white': 'blue';
+				
+				
 			?>
 					
-						<tr>
+						<tr class="<?=$class?>">
+							<td><?=$row[idcomanda]?></td>
 							<td><?=$row[nomnen]?></td>
 							<td><?=$row[nompare]?> <?=$row[cognomspare]?></td>
 							<td><?=$row[nomactivitat]?></td>

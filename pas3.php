@@ -138,8 +138,6 @@ $naixament=$coses[1];
 			<textarea style="display: none;" id="nomintervingut<?=$n?>" name="nomintervingut<?=$n?>" placeholder="<?=$word['fnomintervingut'][$idioma]?>"></textarea>	
 
 			
-			<label for="fitxa"><?=$word['attachfile'][$idioma]?></label>
-			<input type="file" name="fitxa<?=$n?>" id="fitxa<?=$n?>">
 			
 						
 <script type="text/javascript">

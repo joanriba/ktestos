@@ -91,6 +91,21 @@ div.pictures_alone{ margin: 20px 0;
 
 
 
+	input[type="submit2"],a.submit2 {
+	width: auto !important;
+	text-decoration: none;
+	padding: 8px 15px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	line-height: 1;
+	color: $blanc;
+	border: none;
+	background-color: $blaukinobs;
+	
+		&:hover{ background-color: lighten($blaukinobs,7%);}
+	}
+
+
 	input[type="submit"],a.submit {
 	width: auto !important;
 	text-decoration: none;
