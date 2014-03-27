@@ -80,12 +80,6 @@ for ($n=1; $n<=$numeronens; $n++){?>
 			<input type="hidden" name="cognoms<?=$n?>" value="<?=$_POST['cognoms'.$n]?>">
 			<input type="hidden" name="birthdate<?=$n?>" value="<?=$_POST['birthdate'.$n]?>">
 			
-			<!--<input type="hidden" name="fitxa<?=$n?>" value="<?=$_POST['fitxa'.$n]?>">-->
-			
-			<input type="hidden" name="fitxa<?=$n?>" value="<?=$_FILES['fitxa'.$n]['tmp_name']?>">
-			
-			<? if(is_uploaded_file($_FILES['fitxa'.$n]['tmp_name'])) { echo $word['pdfisthere'][$idioma];} else { echo $word['pdfisnotthere'][$idioma];} ?>
-			
 			
 			<?=$_POST['adreca'.$n]?><br>
 			<input type="hidden" name="adreca<?=$n?>" value="<?=$_POST['adreca'.$n]?>">
