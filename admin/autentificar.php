@@ -9,10 +9,10 @@
 
 <?php
 // Configura los datos de tu cuenta
-$dbhost='localhost';
-$dbusername='root';
-$dbuserpass='root';
-$dbname='kinobs';
+$dbhost='nautilus.cat';
+$dbusername='myconcursc';
+$dbuserpass='nau123bdd';
+$dbname='ikinobs';
 // Conectar a la base de datos
 mysql_connect ($dbhost, $dbusername, $dbuserpass);
 mysql_select_db($dbname) or die('No se pudo seleccionar base de datos');

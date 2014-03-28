@@ -8,9 +8,6 @@ include('header.php');
 
 
 
-
-
-
 <div class="bandformtutor">
 	<div class="container">
 		<div class="sixteen columns">
@@ -36,10 +33,7 @@ include('header.php');
 	
 } else { ?>
 		
-		
-		
-		
-		
+				
 		<form method="post" action="?">
 			
 			<input type="hidden" name="id" value="<?=$_SESSION[s_iduser]?>">
