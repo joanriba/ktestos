@@ -38,7 +38,7 @@ $nopagades=mysql_query("select paid from comandes where paid='no'",$cxn); $count
 			<? while($row=mysql_fetch_array($consulta)){  $fechafinal= FechaFormateada_ca(strtotime($row[fecha])); ?>
 					
 						<tr class="white">
-							<td><a href="historial.php?idcomanda=<?=$row[idcomanda]?>">Veure Productes de la Cmd: <?=$row[idcomanda]?></a></td>
+							<td><a class="button-small" href="historial.php?idcomanda=<?=$row[idcomanda]?>">veure comanda <?=$row[idcomanda]?></a></td>
 							<td><a href="nen.php?id=<?=$row[idpare]?>"><?=$row[nom]?>&nbsp;<?=$row[cognoms]?></a></td>
 							<td><?=$fechafinal?></td>
 							<td>
@@ -69,3 +69,5 @@ $nopagades=mysql_query("select paid from comandes where paid='no'",$cxn); $count
 				
 
 </div><!--end band-->
+
+<? include('footer.php');?>

@@ -17,9 +17,9 @@ $category=$_GET[category];
 			<a class="submit2" href="nen_publicar.php">Afegir nen manualment</a><br><br>
 
 				
-				<script>$(document).ready(function() {$("#taulanens").tablesorter(); });</script>
+				<script>$(document).ready(function() {$("#taulahistorial").tablesorter(); });</script>
 					
-					<table id="taulanens" class="nens tablesorter">
+					<table id="taulahistorial" class="nens tablesorter">
 						<thead> 
 						<tr>
 							<th>Nom</td>
@@ -44,7 +44,7 @@ $category=$_GET[category];
 				$interval = $birthday->diff(new DateTime);	
 			?>	
 						
-						<tr>
+						<tr class="white">
 							<td><a href="nen.php?id=<?=$row[id]?>"><?=$row[nom]?></a></td>
 							<td><?=$row[cognoms]?></td>
 							<td><? echo $interval->y;?></td>
@@ -71,3 +71,5 @@ $category=$_GET[category];
 		
 
 </div><!-- tanca bandcontent-admin-->
+
+<? include('footer.php');?>

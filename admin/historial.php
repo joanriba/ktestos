@@ -141,3 +141,5 @@ $consulta=mysql_query("select historial.id,historial.idcomanda,historial.idmodul
 				</form><? } ?>
 					
 </div><!--end band-->
+
+<? include('footer.php');?>

@@ -40,7 +40,7 @@ include('textos.php');?>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	
 	<script src="js/parsley.js"></script>
-	<script src="js/i18n/es.js"></script>
+	<? if($idioma=="ca") {?><script src="js/i18n/ca.js"></script><? } else if($idioma=="es"){?><script src="js/i18n/es.js"></script> <? }?>
 	
 	
 	<link rel="stylesheet" href="js/parsley.css">

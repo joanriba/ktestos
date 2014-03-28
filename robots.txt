@@ -2,5 +2,4 @@
 User-agent: *
 Disallow: 
 Disallow: /admin/
-Disallow: /borrar.php
-Sitemap: http://www.futurecobioscience.com/
+Sitemap: http://www.kinobs.com/

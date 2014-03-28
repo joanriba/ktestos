@@ -102,8 +102,8 @@ $word['backtopanel']=array('ca'=>'Tornar al panell de control', 'es'=>'Volver al
 $word['newcommand']=array('ca'=>'Iniciar una nova preinscripció', 'es'=>'Iniciar nueva inscripción');
 $word['preinscrit']=array('ca'=>'preinscrit', 'es'=>'preinscrito');
 $word['yourkids']=array('ca'=>'Els teus fills', 'es'=>'Tus hijos');
-$word['']=array('ca'=>'', 'es'=>'');
-$word['']=array('ca'=>'', 'es'=>'');
+$word['uploadmedica']=array('ca'=>'Pujar fitxa mèdica', 'es'=>'Subir ficha médica');
+$word['upload']=array('ca'=>'Pujar', 'es'=>'Subir');
 $word['']=array('ca'=>'', 'es'=>'');
 $word['']=array('ca'=>'', 'es'=>'');
 $word['']=array('ca'=>'', 'es'=>'');

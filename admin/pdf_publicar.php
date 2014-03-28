@@ -69,7 +69,7 @@ $deses=$row[deses]; $idpubli=$row[idpubli];}
 			<input type="hidden" value="<?=$_GET[id]?>" name="id">
 			
 			Selecciona l'arxiu pdf:<br>
-			<input type="file" name="imatge"/>
+			<input type="file" name="noufitxer"/>
 						
 			
 			<fieldset>

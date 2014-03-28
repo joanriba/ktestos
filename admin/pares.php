@@ -17,9 +17,9 @@ $category=$_GET[category];
 			<a class="submit2" href="pare_publicar.php">Afegir pare manualment</a><br><br>
 		
 	
-				<script>$(document).ready(function() {$("#taulanens").tablesorter(); } ); </script>
+				<script>$(document).ready(function() {$("#taulahistorial").tablesorter(); } ); </script>
 					
-					<table id="taulanens" class="nens tablesorter">
+					<table id="taulahistorial" class="nens tablesorter">
 						<thead> 
 						<tr>
 							<th>Nom</td>
@@ -37,7 +37,7 @@ $category=$_GET[category];
 						
 						<? while($row=mysql_fetch_array($pares)){?>	
 						
-						<tr>
+						<tr class="white">
 							<td><a href="pare.php?id=<?=$row[id]?>"><?=$row[nom]?> <?=$row[cognoms]?></a></td>
 							<td><?=$row[tel1]?></td>
 							<td><?=$row[tel2]?></td>
@@ -70,3 +70,5 @@ $category=$_GET[category];
 	
 		<!--</div>container-->
 </div><!-- tanca bandcontent-admin-->
+
+<? include('footer.php');?>

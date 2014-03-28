@@ -11,6 +11,56 @@ include('header.php');
 	<div class="container">
 	
 		
+		
+		<?
+			if(isset($_POST['submitpdf'])){
+			
+					$limitedext = array(".jpg",".jpeg",".pdf");
+					
+					
+					//Definim les variables dels quals n'hem de guardar els valors.
+					$new_file = $_FILES['fitxa'];
+					$file_name = $new_file['name'];
+					//to remove spaces from file name we have to replace it with "_".
+					$file_name = str_replace(' ', '_', $file_name);
+					$file_tmp = $new_file['tmp_name'];
+					$file_size = $new_file['size'];
+					$carpeta="fitxes"; //Definim carpeta on aniran els arxius
+	
+					
+					           if (!is_uploaded_file($file_tmp)) {
+              //print error message and file number.
+              echo 'Arxiu no seleccionat <a class="button-small" href="panell.php?idioma='.$_POST[idioma].'">« Tornar enrere</a><br>';
+           }else{
+           
+                 // this code will check file extension
+                 $ext = strrchr($file_name,'.');
+                 if (!in_array(strtolower($ext),$limitedext)) {
+                echo 'L\'Arxiu ('.$file_name.') Té l\'Extensió incorrecte. Cal que sigui .pdf o .jpg   <a class="button-small" href="panell.php?idioma='.$_POST[idioma].'">« Tornar enrere</a><br>';
+                 }else{
+                      
+                                   // FUNCIO QUE PUJA
+                                  copy($_FILES['fitxa']['tmp_name'],$carpeta.'/'.$_POST[id].'.pdf');					
+				                                  
+                                   if (move_uploaded_file($file_tmp,$carpeta.$file_name)) {
+                                  
+	                                 //$vincle= $vincle.$carpeta2.$_FILES['file'.$i]['name'];                     
+                                     echo 'Arxiu ('.$file_name.') Pujat amb exit! <a href="panell.php?idioma='.$_POST[idioma].'"> « Tornar</a><br>';
+                                     header('Location: panell.php');
+                                     exit;
+                                   
+                                   }else{
+                                        echo 'La Pujada ha fallat  <a href="panell.php?idioma='.$_POST[idioma].'"> « Tornar</a><br>';
+                                   }#end of (move_uploaded_file).
+                 }#end of (limitedext).
+           }#end of (!is_uploaded_file).
+					
+	
+
+			} else {
+		
+		?>
+		
 		<?
 		//Accedim a la DB per agafar les dades del tutor segons el seu id recollida en la sessió
 		$darespare=mysql_query("select * from pares where id='".$_SESSION[s_iduser]."'",$cxn);
@@ -58,19 +108,67 @@ include('header.php');
 			
 			<h2><?=$word['yourkids'][$idioma]?></h2>
 			
-		<? $nens=mysql_query("select * from nens where idpare='$_SESSION[s_iduser]'",$cxn);
-		while($row=mysql_fetch_array($nens)){?>
+				<? $nens=mysql_query("select * from nens where idpare='$_SESSION[s_iduser]'",$cxn);
+				while($row=mysql_fetch_array($nens)){?>
 			
 			<div class="one-third column">
 			
-			<h3><?=$row[nom]?> <?=$row[cognoms]?></h3>
+				<h3><?=$row[nom]?> <?=$row[cognoms]?></h3>
 			
-			<?=$row[adreca]?><br>
-			<?=$row[poblacio]?>,<?=$row[cp]?><br><br>
+				<?=$row[adreca]?><br>
+				<?=$row[poblacio]?>,<?=$row[cp]?><br><br>
+				<?=$row[escolaultim]?>: <?=$row[cursacabat]?><br><br>
+				
+				
+				<? 
+				
+				$ruta= $_SERVER[DOCUMENT_ROOT].'/fitxes/'.$row[id].'.pdf';
+				if (file_exists($ruta)) {?>
+ 
+				
+				<a href="/fitxes/<?=$row[id]?>.pdf"><img src="/img/admin/pdf.png" width="20"> Fitxa mèdica</a><br>
+				
+				<a class="button-small-red" id="link<?=$row[id]?>">Tornar a pujar</a><br>
+				
+				
+				<form id="form<?=$row[id]?>" style="display: none;" class="littleform" method="post" action="?" enctype="multipart/form-data">
+					
+					<labal for="fitxamedica"><?=$word['uploadmedica'][$idioma]?> (.pdf)</labal><input type="file" name="fitxa">
+					<input type="hidden" name="idioma" value="<?=$idioma?>">
+					<input type="hidden" name="id" value="<?=$row[id]?>">
+					<input type="submit" class="submit" name="submitpdf" value="<?=$word['upload'][$idioma]?>">
+				
+				</form>
+				
+				<script type="text/javascript">
+					$(document).ready(function(){
+					
+					$("#form<?=$row[id]?>").hide();
+					$("#link<?=$row[id]?>").show();
+					
+					$('#link<?=$row[id]?>').click(function(){
+					$("#form<?=$row[id]?>").slideToggle();
+					});
+					
+					});
+				</script>
+				
+				
+			<? } else { ?>
+					
+				
+				<form class="littleform" method="post" action="?" enctype="multipart/form-data">
+					
+					<labal for="fitxamedica"><?=$word['uploadmedica'][$idioma]?> (.pdf)</labal><input type="file" name="fitxa">
+					<input type="hidden" name="idioma" value="<?=$idioma?>">
+					<input type="hidden" name="id" value="<?=$row[id]?>">
+					<input type="submit" class="submit" name="submitpdf" value="<?=$word['upload'][$idioma]?>">
+				
+				</form>
 			
-			<?=$row[escolaultim]?>: <?=$row[cursacabat]?><br><br>
+			<? } ?>
 			
-			<a class="submit2" href="nen_publicar.php?id=<?=$row[id]?>"><?=$word['editdata'][$idioma]?></a>
+				<a class="submit2" href="nen_publicar.php?id=<?=$row[id]?>"><?=$word['editdata'][$idioma]?></a>
 			
 			</div>
 			
@@ -170,6 +268,7 @@ include('header.php');
 </div><!--end band-->
 
 
+
 <div class="bandformtutor">
 	<div class="container">
 		<div class="sixteen columns">
@@ -177,3 +276,6 @@ include('header.php');
 		</div><!--end sixteen-->
 	</div><!--end container-->
 </div><!--end band-->
+
+
+<? } //end else pdf upload?>

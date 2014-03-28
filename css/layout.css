@@ -58,6 +58,29 @@ body.login {
   text-align: center;
   background: #95d1ea url(/img/admin/bg-login.png) top center repeat-x; }
 
+a.button-small {
+  display: inline-block;
+  background-color: #3389d7;
+  color: white;
+  padding: 2px 10px;
+  text-decoration: none; }
+  a.button-small:hover {
+    background-color: #5ea2df; }
+
+a.button-small-red {
+  display: inline-block;
+  background-color: #e2002e;
+  color: white;
+  padding: 2px 10px;
+  text-decoration: none; }
+  a.button-small-red:hover {
+    background-color: #ff1645; }
+
+table.menu {
+  border-bottom: 8px solid red;
+  width: 95%;
+  margin: auto; }
+
 .entry {
   margin-bottom: 20px;
   padding: 15px !important;
@@ -273,6 +296,9 @@ ul.navadmin li {
   display: inline;
   margin-right: 17px; }
   ul.navadmin li a {
+    padding: 10px;
+    display: inline-block;
+    border: 1 px solid red;
     color: #52514d; }
     ul.navadmin li a:visited {
       color: #52514d; }
@@ -402,9 +428,9 @@ a.submit {
 table.tablesorter {
   font-family: arial;
   background-color: #CDCDCD;
-  margin: 10px 0pt 15px;
+  margin: auto;
   font-size: 10pt;
-  width: 100%;
+  width: 95%;
   text-align: left; }
 
 table.tablesorter thead tr th, table.tablesorter tfoot tr th {
@@ -432,6 +458,7 @@ th.header {
 table.tablesorter tbody td {
   color: #3D3D3D;
   padding: 4px;
+  border-bottom: 1px solid #ebebeb;
   vertical-align: top; }
 
 table.tablesorter tbody tr.odd td {
@@ -609,6 +636,14 @@ p.apartir {
     font-size: 1.5em;
     color: #3389d7; }
 
+form.littleform {
+  border: 1px solid #e3dddd;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em;
+  background-color: #faf9f9;
+  padding: 10px; }
+
 a.newcommand {
   border: 1px solid #236fb4;
   padding: 15px 20px;
@@ -642,7 +677,9 @@ input[type="submit2"], a.submit2 {
   line-height: 1;
   color: white;
   border: none;
-  background-color: #3389d7; }
+  background-color: #3389d7;
+  display: inline-block;
+  margin: 10px 0px; }
   input[type="submit2"]:hover, a.submit2:hover {
     background-color: #519add; }
 

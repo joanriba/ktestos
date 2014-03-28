@@ -147,7 +147,7 @@ $mpdf->Output("pdf/$idcomanda.pdf","F");
 //ARRANQUEM PHPMAILER PER ENVIAR L'ARXIU ADJUNT
 
 $email=$_POST[email1];
-require("class.phpmailer.php");
+require("phpmailer/class.phpmailer.php");
 
 $mail = new PHPMailer();
 

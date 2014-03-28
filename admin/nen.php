@@ -109,3 +109,5 @@ $id=$_GET[id];
 	
 		</div><!--container-->
 </div><!-- tanca bandcontent-admin-->
+
+<? include('footer.php');?>

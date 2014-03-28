@@ -66,32 +66,32 @@ $id_admin= $_SESSION['s_id_admin'];
 
 
 <div class="bandheader-admin">
-	<div class="container">
-		<div class="five columns">
-			<img src="../img/logo-kinobs.png" width="240" title="Pàgina principal" alt="Pàgina principal">
-			<!--<img src="../<?=$clip?>" width="75" height="75" alt="avatar"/>-->
-		</div>
-		
-		<div class="five columns">
-			
-		</div>
-		
-		<div class="five columns">
-			Has accessat com a: <strong><?=$nick?></strong><br/>
+
+
+<table class="menu">
+	<tr>
+		<td><a href="/admin/"><img src="../img/logo-kinobs.png" width="240" title="Pàgina principal" alt="Pàgina principal"></a></td>
+		<td>Has accessat com a: <strong><?=$nick?></strong><br/>
 			<a href="logout.php">Log Out (Tancar la Sessió)</a><br /><a href="/">Tornar a la web</a>
-		</div>
+		</td>
 		
-		<div class="sixteen columns">
+	</tr>
+	
+	<tr>
+		<td colspan="2">
 			<ul class="navadmin">		
-				<li><a href="activitats.php">Activitats, mòduls i categories</a></li>
+				<li><a href="index.php">Activitats, mòduls i categories</a></li>
 				<li><a href="pares.php">Pares</a></li>
 				<li><a href="nens.php">Nens</a></li>
 				<li><a href="historial.php">Historial de Comandes</a></li>
-				<li><a href="comandes.php">Comandes</a></li>
+				<li><a href="comandes.php">Comandes</a></li>	
 			</ul>
-		</div>
-		
-	</div>
+		</td>
+	</tr>
+</table>
+
+
+
 </div><!--tanca bandheader-admin-->
 
 

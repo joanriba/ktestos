@@ -121,7 +121,8 @@ a.green{ color: green;}
 table.nomiedat{td{padding: 0px 5px; vertical-align: middle;}}
 
 p.apartir{ font-size: 1em; font-style: italic; span{ font-size: 1.5em; color: $blaukinobs;}}
-
+ 
+form.littleform{ border: 1px solid darken($grisclar,10%); @include rounded; background-color: $grisclar; padding: 10px;}
 
 a.newcommand{ border: 1px solid darken($blaukinobs,10%); padding: 15px 20px; background-color: $blaukinobs; color: $blanc; text-decoration: none; &:hover{ border: 1px solid darken($blaukinobs,10%); background-color: lighten($blaukinobs,5%);}}
 
@@ -146,6 +147,8 @@ div.nounen{ a{color: $blaukinobs;} background-color: lighten($blaukinobs,30%); p
 	color: $blanc;
 	border: none;
 	background-color: $blaukinobs;
+	display: inline-block;
+	margin: 10px 0px;
 	
 		&:hover{ background-color: lighten($blaukinobs,7%);}
 	}

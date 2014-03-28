@@ -2,9 +2,10 @@
 table.tablesorter {
 	font-family:arial;
 	background-color: #CDCDCD;
-	margin:10px 0pt 15px;
+	margin: auto;
+	
 	font-size: 10pt;
-	width: 100%;
+	width: 95%;
 	text-align: left;
 }
 table.tablesorter thead tr th, table.tablesorter tfoot tr th {
@@ -34,7 +35,7 @@ th.header {
 table.tablesorter tbody td {
 	color: #3D3D3D;
 	padding: 4px;
-	
+	border-bottom: 1px solid #ebebeb;
 	vertical-align: top;
 		
 		

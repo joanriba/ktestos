@@ -66,7 +66,7 @@ $mpdf->Output("pdf/$idcomanda.pdf","F");
 //ARRANQUEM PHPMAILER PER ENVIAR L'ARXIU ADJUNT
 
 $email=$_SESSION['s_email'];
-require("class.phpmailer.php");
+require("phpmailer/class.phpmailer.php");
 
 $mail = new PHPMailer();
 
@@ -118,6 +118,6 @@ if(!$mail->Send()) {
     <p><?=$word['success2'][$idioma];?><p>
     <a class="button" href="download.php?idcomanda=<?=$idcomanda?>"><?=$word['downloadpdf'][$idioma]?></a>
     <a class="button" href="pdf/<?=$idcomanda?>.pdf" target="_blank"><?=$word['openpdf'][$idioma]?></a>
-    <a class="button" href="index.php?idioma=<?=$idioma?>" target="_blank"><?=$word['backtopanel'][$idioma]?></a>
+    <a class="button" href="panell.php?idioma=<?=$idioma?>" target="_blank"><?=$word['backtopanel'][$idioma]?></a>
 	</div></div></div></body></html>
 
